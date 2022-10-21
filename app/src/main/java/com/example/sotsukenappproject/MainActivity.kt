@@ -16,3 +16,4 @@ class MainActivity : AppCompatActivity() {
         //ラーメン食べたい
     }
 }
+// aaaa
