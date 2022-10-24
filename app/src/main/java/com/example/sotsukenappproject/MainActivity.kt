@@ -1,5 +1,6 @@
 package com.example.sotsukenappproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sotsukenappproject.databinding.ActivityMainBinding
@@ -10,7 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+
+        binding.startGame.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
