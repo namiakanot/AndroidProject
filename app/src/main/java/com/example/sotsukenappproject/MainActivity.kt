@@ -12,8 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
-
-        //ラーメン食べたい
     }
 }
-// aaaa
