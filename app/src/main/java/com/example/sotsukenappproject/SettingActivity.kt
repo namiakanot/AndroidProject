@@ -13,3 +13,4 @@ class SettingActivity : AppCompatActivity() {
         setContentView(view)
     }
 }
+//unko
