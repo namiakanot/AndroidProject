@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // taphereを押すとメイン画面(戦闘画面)へ遷移
         binding.startGame.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
