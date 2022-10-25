@@ -7,30 +7,14 @@
     tools:context=".MainActivity">
 
     <ImageView
-<<<<<<< HEAD
         android:id="@+id/titleBack"
-        android:layout_width="901dp"
-        android:layout_height="733dp"
-=======
-        android:id="@+id/background_imge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
->>>>>>> d0fc32b3f91b3d2c28478149568fc13d7d0f1454
+        android:layout_width="416dp"
+        android:layout_height="732dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/main_background" />
-
-<<<<<<< HEAD
-    <ImageView
-        android:id="@+id/titleLogo"
-        android:layout_width="475dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="92dp"
-=======
 
     <ImageButton
 
@@ -47,30 +31,16 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/title_imge"
+        android:id="@+id/titleLogo"
         android:layout_width="0dp"
         android:layout_height="270dp"
         android:scaleType="centerCrop"
->>>>>>> d0fc32b3f91b3d2c28478149568fc13d7d0f1454
         android:src="@drawable/main_background"
-        app:layout_constraintBottom_toTopOf="@+id/startGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/title_logo"
         tools:ignore="UnknownId" />
-
-    <ImageButton
-        android:id="@+id/startGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleLogo"
-        app:srcCompat="@drawable/taphere"
-        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
