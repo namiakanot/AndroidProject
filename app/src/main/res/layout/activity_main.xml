@@ -7,35 +7,23 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/background"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/main_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/main_background" />
 
-    <ImageView
-        android:id="@+id/title_logo"
-        android:layout_width="0dp"
-        android:layout_height="270dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/title_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/title_logo" />
-
 
     <ImageButton
 
         android:id="@+id/startGame"
-        android:layout_width="300dp"
-        android:layout_height="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:src="@drawable/taphere"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +34,18 @@
         app:srcCompat="@drawable/taphere"
         tools:ignore="SpeakableTextPresentCheck" />
 
-
+    <ImageView
+        android:id="@+id/title_logo"
+        android:layout_width="0dp"
+        android:layout_height="270dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/title_logo"
+        app:layout_constraintBottom_toTopOf="@+id/startGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503"
+        app:srcCompat="@drawable/title_logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
