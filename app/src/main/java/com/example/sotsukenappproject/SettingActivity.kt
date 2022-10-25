@@ -6,6 +6,7 @@ import com.example.sotsukenappproject.databinding.ActivityMainBinding
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

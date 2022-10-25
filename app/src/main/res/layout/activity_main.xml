@@ -12,8 +12,10 @@
         android:layout_height="732dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/main_background" />
 
     <ImageButton
@@ -34,9 +36,11 @@
         android:id="@+id/titleLogo"
         android:layout_width="0dp"
         android:layout_height="270dp"
+        android:layout_marginTop="72dp"
         android:scaleType="centerCrop"
         android:src="@drawable/main_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/title_logo"
