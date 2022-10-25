@@ -24,8 +24,8 @@
     <ImageButton
 
         android:id="@+id/startGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
         android:scaleType="fitCenter"
         android:src="@drawable/taphere"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,18 +37,18 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/title_logo"
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="270dp"
         android:layout_marginTop="72dp"
         android:scaleType="centerCrop"
         android:src="@drawable/title_logo"
-        app:layout_constraintBottom_toTopOf="@+id/startGame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503"
+        app:layout_constraintVertical_bias="0.303"
         app:srcCompat="@drawable/title_logo" />
 
 
