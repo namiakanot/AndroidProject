@@ -3,5 +3,10 @@
     <style name="Widget.Theme.SotsukenAppProject.ButtonBar.Fullscreen" parent="">
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+
+        <!--フォント追加-->
+        <item name="android:fontFamily">@font/851gkktt_005</item>
+
+
     </style>
 </resources>
