@@ -3,7 +3,6 @@ package com.example.sotsukenappproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sotsukenappproject.databinding.ActivityGameBinding
-import com.example.sotsukenappproject.databinding.ActivityMainBinding
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding

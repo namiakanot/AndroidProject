@@ -2,7 +2,6 @@ package com.example.sotsukenappproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.sotsukenappproject.databinding.ActivityMainBinding
 import com.example.sotsukenappproject.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
