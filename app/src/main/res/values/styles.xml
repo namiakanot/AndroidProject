@@ -1,8 +1,9 @@
 <resources>
 
-    <style name="Widget.Theme.SotsukenAppProject.ButtonBar.Fullscreen" parent="">
+    <style name="Widget.Theme.sotsukenAppProject.ButtonBar.Fullscreen" parent="">
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+
 
     </style>
 </resources>
