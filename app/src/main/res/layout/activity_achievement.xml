@@ -20,7 +20,7 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="374dp"
+        android:layout_width="375dp"
         android:layout_height="95dp"
         android:src="@drawable/achievement"
         app:layout_constraintBottom_toBottomOf="parent"
