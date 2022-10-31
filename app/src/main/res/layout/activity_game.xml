@@ -4,18 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".GameActivity">
-
-    <ImageView
-        android:id="@+id/titleBack"
-        android:layout_width="901dp"
-        android:layout_height="733dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/main_background" />
+    tools:context=".GameActivity" >
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
