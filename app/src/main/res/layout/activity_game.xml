@@ -60,16 +60,6 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/osaka"
-        android:layout_width="122dp"
-        android:layout_height="171dp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/oosaka" />
-
-    <ImageView
         android:id="@+id/kyoto"
         android:layout_width="159dp"
         android:layout_height="160dp"
@@ -125,6 +115,7 @@
         android:layout_height="267dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hyougo" />
@@ -134,6 +125,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="nara,osaka,wakayama,hyogo,siga,kyoto,mie" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/kinki"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/osaka"
+        android:layout_width="108dp"
+        android:layout_height="111dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/oosaka" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
