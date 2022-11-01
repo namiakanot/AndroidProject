@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="351dp"
+        android:layout_height="299dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <SeekBar
-        android:id="@+id/volume_bar"
+        android:id="@+id/volume"
         android:layout_width="189dp"
         android:layout_height="32dp"
         android:backgroundTint="@color/black_overlay"
@@ -88,7 +88,7 @@
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="textView2,volume_bar" />
+        app:constraint_referenced_ids="textView2,volume" />
 
     <Button
         android:id="@+id/back_button"
@@ -103,5 +103,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textvolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:fontFamily="@font/gkktt851"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/player_name"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

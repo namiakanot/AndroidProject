@@ -18,5 +18,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
+        // taphereを押すとメイン画面(戦闘画面)へ遷移
+        binding.settingmode.setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

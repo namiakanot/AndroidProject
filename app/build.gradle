@@ -33,6 +33,11 @@ android {
         viewBinding = true
     }
 
+    //追記
+    viewBinding{
+        enabled = true
+    }
+
 }
 
 dependencies {
