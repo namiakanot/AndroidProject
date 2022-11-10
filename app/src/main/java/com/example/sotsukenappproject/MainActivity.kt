@@ -29,5 +29,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
+        // 育成へ
+        binding.canpmode.setOnClickListener {
+            val demo = Intent(this, CanpActivity::class.java)
+            startActivity(demo)
+        }
     }
 }

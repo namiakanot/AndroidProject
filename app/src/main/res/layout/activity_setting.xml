@@ -13,7 +13,7 @@
         android:src="@drawable/result_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -65,7 +65,7 @@
         android:layout_height="32dp"
         android:backgroundTint="@color/black_overlay"
         android:backgroundTintMode="src_atop"
-        android:thumbTint="@color/black"
+        android:thumbTint="@color/design_default_color_primary_variant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,7 @@
         app:constraint_referenced_ids="textView2,volume" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/backbutton"
         android:layout_width="194dp"
         android:layout_height="66dp"
         android:backgroundTint="#FFFFFF"

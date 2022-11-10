@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/backbutton"
         android:layout_width="194dp"
         android:layout_height="66dp"
         android:backgroundTint="#FFFFFF"
@@ -95,5 +95,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/grow_button" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="199dp"
+        android:layout_height="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176"
+        app:srcCompat="@drawable/syotyou" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotationX="178"
+        app:layout_constraintBottom_toBottomOf="@+id/camp_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/e0724_2" />
+
+    <TextView
+        android:id="@+id/syotyouword"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/gkktt851"
+        android:text="@string/textmessage"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/camp_background"
+        app:layout_constraintEnd_toEndOf="@+id/camp_background"
+        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.472" />
+
+    <TextView
+        android:id="@+id/syotyouword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
+        android:text="所要時間"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/camp_background"
+        app:layout_constraintVertical_bias="0.823" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="00:00"
+        android:textAllCaps="false"
+        android:textSize="60sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/camp_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

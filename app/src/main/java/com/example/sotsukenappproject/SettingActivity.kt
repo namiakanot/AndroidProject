@@ -1,13 +1,22 @@
 package com.example.sotsukenappproject
 
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.MotionEvent
+import android.view.View
+import android.widget.ImageView
 import android.widget.SeekBar
+import android.view.animation.RotateAnimation
 import com.example.sotsukenappproject.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
+    private lateinit var soundPool: SoundPool
+    private var soundResId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySettingBinding.inflate(layoutInflater)
@@ -16,11 +25,11 @@ class SettingActivity : AppCompatActivity() {
         setContentView(view)
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
-        binding.backButton.setOnClickListener {
+        binding.backbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
-
 
         // 初期値
         binding.volume.setProgress(0)
@@ -36,13 +45,33 @@ class SettingActivity : AppCompatActivity() {
                     val str: String = getString(R.string.percentage, progress)
                     binding.textvolume.text = str
                 }
+
                 override fun onStartTrackingTouch(volume_bar: SeekBar) {
+                    soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
                 }
                 override fun onStopTrackingTouch(volume_bar: SeekBar) {
                 }
             }
         )
-
-
     }
-}
+
+    override fun onResume() {
+            super.onResume()
+            soundPool =
+               SoundPool.Builder().run {
+                   val audioAttributes = AudioAttributes.Builder().run {
+                       setUsage(AudioAttributes.USAGE_GAME)
+                        build()
+                    }
+                    setMaxStreams(1)
+                    setAudioAttributes(audioAttributes)
+                    build()
+                }
+            soundResId = soundPool.load(this, R.raw.set, 1)
+        }
+
+    override fun onPause() {
+        super.onPause()
+        soundPool.release()
+    }
+    }

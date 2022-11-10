@@ -40,7 +40,7 @@
         android:id="@+id/settingmode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="仮"
+        android:text="setting"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
@@ -75,6 +75,18 @@
         app:layout_constraintTop_toBottomOf="@+id/reser_button"
         app:layout_constraintVertical_bias="0.247"
         app:srcCompat="@drawable/continue_button" />
+
+    <Button
+        android:id="@+id/canpmode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="camp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingmode"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="zero">0 %</string>
     <string name="percentage">%d %%</string>
+    <string name="textmessage">よく来たな、ここでは兵士の育成が行えるぞ。</string>
+    <string name="textsmall">小育成か、成果は少ないが短時間で育成が完了できるぞ。</string>
+    <string name="textmiddle">中育成か、ほどほどな成果を得ることができて時間も長すぎないちょうどいい育成だな。</string>
+    <string name="textlarge">大育成だな、時間はかかるがそれ相応の成果が期待できる。途中で終了してしまう可能性も高くなるが...</string>
 </resources>
