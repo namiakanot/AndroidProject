@@ -1,6 +1,7 @@
 package com.example.sotsukenappproject
 
 import android.content.Intent
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sotsukenappproject.databinding.ActivityMainBinding
@@ -11,15 +12,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
+
+        var Begin = findViewById<ImageButton>(R.id.reserbutton)
+        var Continue = findViewById<ImageButton>(R.id.continuebutton)
 
         //初めから
-        binding.reserButton.setOnClickListener {
+        Begin.setOnClickListener {
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
         // 続きから
-        binding.continueButton.setOnClickListener {
+        Continue.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
