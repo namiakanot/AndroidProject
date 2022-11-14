@@ -49,11 +49,12 @@
         app:layout_constraintVertical_bias="0.333" />
 
     <ImageButton
-        android:id="@+id/reser_button"
+        android:id="@+id/reserbutton"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
+        android:src="@drawable/reset_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -63,17 +64,18 @@
         app:srcCompat="@drawable/reset_button" />
 
     <ImageButton
-        android:id="@+id/continue_button"
+        android:id="@+id/continuebutton"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
+        android:src="@drawable/continue_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reser_button"
-        app:layout_constraintVertical_bias="0.247"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874"
         app:srcCompat="@drawable/continue_button" />
 
     <Button

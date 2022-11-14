@@ -83,7 +83,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/grow_button"
+        android:id="@+id/growbutton"
         android:layout_width="wrap_content"
         android:layout_height="98dp"
         android:background="@android:color/transparent"
@@ -166,5 +166,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.612" />
+
+    <SeekBar
+        android:id="@+id/growbar"
+        android:layout_width="237dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="@+id/camp_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/camp_background"
+        app:layout_constraintVertical_bias="0.402" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

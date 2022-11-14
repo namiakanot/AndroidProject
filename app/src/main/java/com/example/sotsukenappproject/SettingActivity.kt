@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.view.animation.RotateAnimation
+import android.widget.TextView
 import com.example.sotsukenappproject.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
