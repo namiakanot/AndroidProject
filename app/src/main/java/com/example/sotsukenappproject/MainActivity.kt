@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         //初めから
         Begin.setOnClickListener {
-            val intent = Intent(this, SettingActivity::class.java)
+            val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
         // 続きから
@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         binding.canpmode.setOnClickListener {
             val demo = Intent(this, CanpActivity::class.java)
             startActivity(demo)
+        }
+        //　実績へ
+        binding.achievementbutton.setOnClickListener {
+            val intent = Intent(this, AchievementActivity::class.java)
+            startActivity(intent)
         }
     }
 }
