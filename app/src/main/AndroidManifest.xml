@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SotsukenAppProject">
         <activity
-            android:name=".Canp_Stand_ByActivity"
+            android:name=".CampStandByActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".CanpActivity"
+            android:name=".CampActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

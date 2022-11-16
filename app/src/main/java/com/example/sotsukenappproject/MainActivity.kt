@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
         // 育成へ
         binding.canpmode.setOnClickListener {
-            val demo = Intent(this, CanpActivity::class.java)
+            val demo = Intent(this, CampActivity::class.java)
             startActivity(demo)
         }
         //　実績へ

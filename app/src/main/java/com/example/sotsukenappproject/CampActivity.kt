@@ -1,28 +1,23 @@
 package com.example.sotsukenappproject
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.widget.SeekBar
-import android.icu.lang.UCharacter.GraphemeClusterBreak.V
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import com.example.sotsukenappproject.databinding.ActivityCanpBinding
+import com.example.sotsukenappproject.databinding.ActivityCampBinding
 
-class CanpActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCanpBinding
+class CampActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCampBinding
     private lateinit var soundPool: SoundPool
     private var soundResgr = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCanpBinding.inflate(layoutInflater)
+        binding = ActivityCampBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -97,7 +92,7 @@ class CanpActivity : AppCompatActivity() {
         }
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
-            val intent = Intent(this, Canp_Stand_ByActivity::class.java)
+            val intent = Intent(this, CampStandByActivity::class.java)
             startActivity(intent)
         }
 
