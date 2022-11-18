@@ -31,16 +31,22 @@ class CampActivity : AppCompatActivity() {
         var small = findViewById<ImageButton>(R.id.small_grow)
         var middle = findViewById<ImageButton>(R.id.middle_grow)
         var large = findViewById<ImageButton>(R.id.large_grow)
+        var timerText = findViewById<TextView>(R.id.timer)
+        var growuptimer : Int = 0
+
 
         //  ボタン押したとき
         small.setOnClickListener{
             textMessage.setText(R.string.textsmall)
+            timerText.setText("10:00")
+            growuptimer = 10
+
+
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
                         growbar: SeekBar, progress: Int, fromUser: Boolean) {
                         val str: String = getString(R.string.percentage, progress)
-                        binding.timer.text = str
                     }
 
 
@@ -55,12 +61,13 @@ class CampActivity : AppCompatActivity() {
 
         middle.setOnClickListener{
             textMessage.setText(R.string.textmiddle)
+            timerText.setText("20:00")
+            growuptimer = 20
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
                         growbar: SeekBar, progress: Int, fromUser: Boolean) {
                         val str: String = getString(R.string.percentage, progress)
-                        binding.timer.text = str
                     }
 
                     override fun onStartTrackingTouch(volume_bar: SeekBar) {
@@ -74,12 +81,14 @@ class CampActivity : AppCompatActivity() {
 
         large.setOnClickListener{
             textMessage.setText(R.string.textlarge)
+            timerText.setText("30:00")
+            growuptimer = 30
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
                         growbar: SeekBar, progress: Int, fromUser: Boolean) {
                         val str: String = getString(R.string.percentage, progress)
-                        binding.timer.text = str
+
                     }
 
                     override fun onStartTrackingTouch(volume_bar: SeekBar) {
@@ -93,7 +102,12 @@ class CampActivity : AppCompatActivity() {
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
+
+            //
+            intent.putExtra("CampLevel",growuptimer.toInt())
+
             startActivity(intent)
+
         }
 
     }
