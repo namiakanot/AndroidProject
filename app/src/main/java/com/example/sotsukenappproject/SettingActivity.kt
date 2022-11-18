@@ -1,7 +1,9 @@
 package com.example.sotsukenappproject
 
+import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +11,9 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.media.MediaPlayer
+import android.os.Handler
+import android.os.Looper
 import android.widget.SeekBar
 import android.view.animation.RotateAnimation
 import android.widget.TextView
@@ -16,8 +21,13 @@ import com.example.sotsukenappproject.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
+    //bgm
+    private lateinit var player: MediaPlayer
+    //SE
     private lateinit var soundPool: SoundPool
     private var soundResId = 0
+    private var soundResId2 = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySettingBinding.inflate(layoutInflater)
@@ -32,8 +42,18 @@ class SettingActivity : AppCompatActivity() {
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
 
+        binding.titlebutton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+
+        binding.playerName.setOnClickListener {
+            soundPool.play(soundResId2,1.0f,100f,0,0,1.0f)
+        }
+
         // 初期値
-        binding.volume.setProgress(0)
+        binding.volume.setProgress(50)
 
         //　最大値
         binding.volume.setMax(100)
@@ -42,7 +62,8 @@ class SettingActivity : AppCompatActivity() {
         binding.volume.setOnSeekBarChangeListener(
             object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(
-                    volume: SeekBar, progress: Int, fromUser: Boolean) {
+                    volume: SeekBar, progress: Int, fromUser: Boolean
+                ) {
                     val str: String = getString(R.string.percentage, progress)
                     binding.textvolume.text = str
                 }
@@ -50,14 +71,18 @@ class SettingActivity : AppCompatActivity() {
                 override fun onStartTrackingTouch(volume_bar: SeekBar) {
                     soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
                 }
+
                 override fun onStopTrackingTouch(volume_bar: SeekBar) {
                 }
             }
         )
+        player = MediaPlayer.create(this, R.raw.sora)
+        player.isLooping = true
     }
 
     override fun onResume() {
             super.onResume()
+            player.start()
             soundPool =
                SoundPool.Builder().run {
                    val audioAttributes = AudioAttributes.Builder().run {
@@ -68,7 +93,8 @@ class SettingActivity : AppCompatActivity() {
                     setAudioAttributes(audioAttributes)
                     build()
                 }
-            soundResId = soundPool.load(this, R.raw.set, 1)
+            soundResId = soundPool.load(this, R.raw.change, 1)
+            soundResId2 = soundPool.load(this, R.raw.change2,1)
         }
 
     override fun onPause() {

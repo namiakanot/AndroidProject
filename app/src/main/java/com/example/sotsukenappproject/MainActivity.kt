@@ -1,6 +1,7 @@
 package com.example.sotsukenappproject
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import com.example.sotsukenappproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var player: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -44,5 +46,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AchievementActivity::class.java)
             startActivity(intent)
         }
+
+        player = MediaPlayer.create(this, R.raw.sora)
+        player.isLooping = true
+    }
+    override fun onResume(){
+        super.onResume()
+        player.start()
+    }
+
+    override fun onPause(){
+        super.onPause()
+        player.pause()
     }
 }

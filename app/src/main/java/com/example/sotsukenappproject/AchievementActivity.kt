@@ -15,6 +15,7 @@ class AchievementActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAchievementBinding
     private lateinit var soundPool: SoundPool
     private var soundResId = 0
+    private var soundResId2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityAchievementBinding.inflate(layoutInflater)
@@ -26,7 +27,7 @@ class AchievementActivity : AppCompatActivity() {
         binding.backbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+            soundPool.play(soundResId2, 1.0f, 100f, 0, 0, 1.0f)
         }
 
         //実績
@@ -36,6 +37,8 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("ゲームを一回クリアする")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         binding.silver1.setOnClickListener {
             AlertDialog.Builder(this)
@@ -43,6 +46,8 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("100万人の差をつけて勝利する")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         binding.silver2.setOnClickListener {
             AlertDialog.Builder(this)
@@ -50,6 +55,8 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("近畿地方をすべて制圧する")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         binding.bronze1.setOnClickListener {
             AlertDialog.Builder(this)
@@ -57,6 +64,8 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("一回の進行時間が120分以上")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         binding.bronze2.setOnClickListener {
             AlertDialog.Builder(this)
@@ -64,6 +73,8 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("自軍の兵力が敵軍の勢力を下回った状態で進行達成")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         binding.bronze1.setOnClickListener {
             AlertDialog.Builder(this)
@@ -71,6 +82,28 @@ class AchievementActivity : AppCompatActivity() {
                 .setMessage("大育成を一度終える")
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
+
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        soundPool =
+            SoundPool.Builder().run {
+                val audioAttributes = AudioAttributes.Builder().run {
+                    setUsage(AudioAttributes.USAGE_GAME)
+                    build()
+                }
+                setMaxStreams(1)
+                setAudioAttributes(audioAttributes)
+                build()
+            }
+        soundResId = soundPool.load(this, R.raw.tap, 1)
+        soundResId2 = soundPool.load(this, R.raw.change, 1)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        soundPool.release()
     }
 }
