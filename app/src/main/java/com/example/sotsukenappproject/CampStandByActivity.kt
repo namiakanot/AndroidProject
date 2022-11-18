@@ -1,5 +1,6 @@
 package com.example.sotsukenappproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -31,7 +32,7 @@ class CampStandByActivity : AppCompatActivity() {
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val times = 3 ;
+        var times = intent.getIntExtra("CampLevel",0)
 
         binding.standByTimer.text = "${times}：00"
         val timer = CampTimer((times * 60 * 1000).toLong(),100)
@@ -45,3 +46,11 @@ class CampStandByActivity : AppCompatActivity() {
     //カウントダウン処理<<
 
     }
+
+
+
+
+
+
+
+
