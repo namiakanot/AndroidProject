@@ -20,6 +20,20 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/main_background" />
 
+
+    <ImageView
+        android:id="@+id/Kinkitihou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129"
+        android:src="@drawable/kinnkitihou"
+        app:srcCompat="@drawable/kinnkitihou" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -59,101 +73,6 @@
             app:srcCompat="@drawable/foot_camp_icon" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="nara,osaka,wakayama,hyogo,siga,kyoto,mie" />
-
-    <ImageView
-        android:id="@+id/kyoto"
-        android:layout_width="155dp"
-        android:layout_height="160dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/kyouto" />
-
-    <ImageView
-        android:id="@+id/nara"
-        android:layout_width="121dp"
-        android:layout_height="152dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@drawable/nara" />
-
-    <ImageView
-        android:id="@+id/mie"
-        android:layout_width="160dp"
-        android:layout_height="246dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387"
-        app:srcCompat="@drawable/mie" />
-
-    <ImageView
-        android:id="@+id/siga"
-        android:layout_width="125dp"
-        android:layout_height="174dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.708"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147"
-        app:srcCompat="@drawable/siga" />
-
-    <ImageView
-        android:id="@+id/wakayama"
-        android:layout_width="147dp"
-        android:layout_height="129dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        app:srcCompat="@drawable/wakayama" />
-
-    <ImageView
-        android:id="@+id/hyogo"
-        android:layout_width="196dp"
-        android:layout_height="196dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226"
-        app:srcCompat="@drawable/hyougo" />
-
-    <ImageView
-        android:id="@+id/osaka"
-        android:layout_width="118dp"
-        android:layout_height="128dp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36"
-        app:srcCompat="@drawable/oosaka" />
-
     <TextView
         android:id="@+id/user_name"
         android:layout_width="169dp"
@@ -183,6 +102,116 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.742"
         tools:text="@string/startAttack" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="184dp"
+        android:src="@drawable/hyougo"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205"
+        app:srcCompat="@drawable/hyougo" />
+
+    <ImageView
+        android:id="@+id/osaka"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/oosaka"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.349"
+        app:srcCompat="@drawable/oosaka" />
+
+    <ImageView
+        android:id="@+id/kyout"
+        android:layout_width="170dp"
+        android:layout_height="185dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/kyouto"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:srcCompat="@drawable/kyouto" />
+
+    <ImageView
+        android:id="@+id/siga"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/siga"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/siga" />
+
+    <ImageView
+        android:id="@+id/mie"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="196dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mie"
+        android:tint="@color/red2"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.374"
+        app:srcCompat="@drawable/mie" />
+
+    <ImageView
+        android:id="@+id/nara"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/nara"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.665"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        app:srcCompat="@drawable/nara" />
+
+    <ImageView
+        android:id="@+id/wakayama"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/wakayama"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563"
+        app:srcCompat="@drawable/wakayama" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
