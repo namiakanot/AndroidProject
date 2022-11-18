@@ -9,4 +9,5 @@
     <string name="textsmall">小育成か、成果は少ないが短時間で育成が完了できるぞ。</string>
     <string name="textmiddle">中育成か、ほどほどな成果を得ることができて時間も長すぎないちょうどいい育成だな。</string>
     <string name="textlarge">大育成だな、時間はかかるがそれ相応の成果が期待できる。途中で終了してしまう可能性も高くなるが...</string>
+    <string name="startAttack">進行開始</string>
 </resources>

@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SotsukenAppProject">
         <activity
+            android:name=".AttackCountDownActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LastCheckActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChoosePrefectureActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CampStandByActivity"
             android:exported="false">
             <meta-data
