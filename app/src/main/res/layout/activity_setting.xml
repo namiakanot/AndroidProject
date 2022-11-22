@@ -96,7 +96,7 @@
         app:constraint_referenced_ids="textView2,volume" />
 
     <Button
-        android:id="@+id/attack_bt"
+        android:id="@+id/backbutton"
         android:layout_width="106dp"
         android:layout_height="77dp"
         android:backgroundTint="#FFFFFF"
