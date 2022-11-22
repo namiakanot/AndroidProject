@@ -65,7 +65,7 @@
         android:id="@+id/volume"
         android:layout_width="189dp"
         android:layout_height="32dp"
-        android:backgroundTint="@color/black_overlay"
+        android:backgroundTint="@color/black"
         android:backgroundTintMode="src_atop"
         android:thumbTint="@color/design_default_color_primary_variant"
         app:layout_constraintBottom_toBottomOf="parent"
