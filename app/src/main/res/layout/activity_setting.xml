@@ -27,10 +27,8 @@
         android:src="@drawable/tab_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/tab_back" />
 
     <ImageView
@@ -56,16 +54,19 @@
         android:text="名前　"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <SeekBar
         android:id="@+id/volume"
         android:layout_width="189dp"
         android:layout_height="32dp"
-        android:backgroundTint="@color/black_overlay"
+<<<<<<< HEAD
+        android:backgroundTint="@color/black"
+=======
+
+>>>>>>> 12c92777ba248084e2362feb82b7664ce0bb01d7
         android:backgroundTintMode="src_atop"
         android:thumbTint="@color/design_default_color_primary_variant"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,7 +97,7 @@
         app:constraint_referenced_ids="textView2,volume" />
 
     <Button
-        android:id="@+id/backbutton"
+        android:id="@+id/attack_bt"
         android:layout_width="106dp"
         android:layout_height="77dp"
         android:backgroundTint="#FFFFFF"

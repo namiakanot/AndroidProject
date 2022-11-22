@@ -25,25 +25,295 @@
         android:id="@+id/Kinkitihou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/kinnkitihou"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567"
+        app:layout_constraintVertical_bias="0.42000002"
         app:srcCompat="@drawable/kinnkitihou" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="184dp"
+        android:src="@drawable/hyougo"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@drawable/hyougo" />
+
+    <ImageView
+        android:id="@+id/osaka"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/oosaka"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.455"
+        app:srcCompat="@drawable/oosaka" />
+
+    <ImageView
+        android:id="@+id/kyout"
+        android:layout_width="170dp"
+        android:layout_height="185dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/kyouto"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26999998"
+        app:srcCompat="@drawable/kyouto" />
+
+
+    <ImageView
+        android:id="@+id/siga"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/siga"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.267"
+        app:srcCompat="@drawable/siga" />
+
+    <ImageView
+        android:id="@+id/mie"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="196dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mie"
+        android:tint="@color/red2"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517"
+        app:srcCompat="@drawable/mie" />
+
+    <ImageView
+        android:id="@+id/nara"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/nara"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.665"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57"
+        app:srcCompat="@drawable/nara" />
+
+    <ImageView
+        android:id="@+id/wakayama"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/wakayama"
+        android:tint="@color/red2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684"
+        app:srcCompat="@drawable/wakayama" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/hyougo_bt"
         android:layout_width="79dp"
         android:layout_height="127dp"
         android:background="@color/none"
-        android:text="Button"
+        android:fontFamily="@font/gkktt851"
+        android:text="兵庫"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
         app:layout_constraintVertical_bias="0.257" />
+
+    <Button
+        android:id="@+id/kyoto_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="京都"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <Button
+        android:id="@+id/siga_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="滋賀"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.182" />
+
+    <Button
+        android:id="@+id/osaka_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="大阪"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <Button
+        android:id="@+id/nara_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="奈良"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.635" />
+
+    <Button
+        android:id="@+id/mie_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="三重"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.552" />
+
+    <Button
+        android:id="@+id/wakayama_bt"
+        android:layout_width="79dp"
+        android:layout_height="127dp"
+        android:background="@color/none"
+        android:fontFamily="@font/gkktt851"
+        android:text="和歌山"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
+        app:layout_constraintVertical_bias="0.855" />
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
+        android:text="TextView"
+        android:textColor="#2863DA"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <TextView
+        android:id="@+id/enemie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
+        android:text="TextView"
+        android:textColor="#ED1414"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <TextView
+        android:id="@+id/Text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
+        android:text="VS"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <Button
+        android:id="@+id/attack_bt"
+        android:layout_width="183dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/font"
+        android:text="攻撃開始"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.879" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
