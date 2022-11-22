@@ -62,11 +62,7 @@
         android:id="@+id/volume"
         android:layout_width="189dp"
         android:layout_height="32dp"
-<<<<<<< HEAD
         android:backgroundTint="@color/black"
-=======
-
->>>>>>> 12c92777ba248084e2362feb82b7664ce0bb01d7
         android:backgroundTintMode="src_atop"
         android:thumbTint="@color/design_default_color_primary_variant"
         app:layout_constraintBottom_toBottomOf="parent"
