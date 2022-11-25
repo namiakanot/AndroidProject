@@ -103,7 +103,7 @@ class CampActivity : AppCompatActivity() {
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
 
-            //
+            //タイマーの情報
             intent.putExtra("CampLevel",growuptimer.toInt())
 
             startActivity(intent)
