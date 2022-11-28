@@ -5,6 +5,14 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="zero">0 %</string>
     <string name="percentage">%d %%</string>
+    <string name="plname">プレイヤーさん</string>
+    <string name="osaka">大阪</string>
+    <string name="hyogo">兵庫</string>
+    <string name="kyoto">京都</string>
+    <string name="shiga">滋賀</string>
+    <string name="mie">三重</string>
+    <string name="wakayama">和歌山</string>
+    <string name="nara">奈良</string>
     <string name="textmessage">よく来たな、ここでは兵士の育成が行えるぞ。</string>
     <string name="textsmall">小育成か、成果は少ないが短時間で育成が完了できるぞ。</string>
     <string name="textmiddle">中育成か、ほどほどな成果を得ることができて時間も長すぎないちょうどいい育成だな。</string>

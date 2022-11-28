@@ -31,5 +31,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.42000002"
         app:srcCompat="@drawable/kinnkitihou" />
+    <TextView
+        android:id="@+id/stand_by_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="90sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425"
+        tools:text="00:00" />
+
+    <Button
+        android:id="@+id/timer_stop"
+        android:layout_width="169dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/font"
+        android:text="停止"
+        android:textColor="#000000"
+        android:textSize="48sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891" />
+
+    <Button
+        android:id="@+id/timer_start"
+        android:layout_width="169dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/font"
+        android:text="開始"
+        android:textColor="#000000"
+        android:textSize="48sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

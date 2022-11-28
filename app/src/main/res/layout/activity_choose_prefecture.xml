@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/kinnkitihou" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/hyogo"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginEnd="184dp"
@@ -66,7 +66,7 @@
         app:srcCompat="@drawable/oosaka" />
 
     <ImageView
-        android:id="@+id/kyout"
+        android:id="@+id/kyoto"
         android:layout_width="170dp"
         android:layout_height="185dp"
         android:scaleType="fitXY"
@@ -302,7 +302,7 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <Button
-        android:id="@+id/attack_bt"
+        android:id="@+id/attack_button"
         android:layout_width="183dp"
         android:layout_height="52dp"
         android:backgroundTint="#FFFFFF"
@@ -315,5 +315,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.879" />
+
+    <Button
+        android:id="@+id/backbutton2"
+        android:layout_width="179dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/font"
+        android:text="←戻る"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

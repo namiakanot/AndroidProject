@@ -20,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         var Begin = findViewById<ImageButton>(R.id.reserbutton)
         var Continue = findViewById<ImageButton>(R.id.continuebutton)
 
-        //初めから
-        Begin.setOnClickListener {
-            val intent = Intent(this, GameActivity::class.java)
-            startActivity(intent)
-        }
-        // 続きから
-        Continue.setOnClickListener {
+        // 続きから(元)
+//        Continue.setOnClickListener {
+//            val intent = Intent(this, GameActivity::class.java)
+//            startActivity(intent)
+//        }
+        //続きから
+        binding.reserbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         }
         // 育成へ
         binding.canpmode.setOnClickListener {
-            val demo = Intent(this, CampActivity::class.java)
-            startActivity(demo)
+            val intent = Intent(this, CampActivity::class.java)
+            startActivity(intent)
         }
         //　実績へ
         binding.achievementbutton.setOnClickListener {
