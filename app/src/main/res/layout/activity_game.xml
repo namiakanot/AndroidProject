@@ -198,7 +198,7 @@
         app:srcCompat="@drawable/wakayama" />
 
     <Button
-        android:id="@+id/backbutton"
+        android:id="@+id/attackbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"

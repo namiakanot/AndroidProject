@@ -34,7 +34,7 @@ class GameActivity : AppCompatActivity() {
         /* ↑フッターメニュー */
 
         /* ↓進行開始ボタン */
-        binding.attackButton.setOnClickListener {
+        binding.attackbutton.setOnClickListener {
             val intent = Intent( this, ChoosePrefectureActivity::class.java)
             startActivity(intent)
                 /* ↓進行先選択 */
