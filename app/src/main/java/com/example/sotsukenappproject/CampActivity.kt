@@ -22,7 +22,7 @@ class CampActivity : AppCompatActivity() {
         setContentView(view)
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
-        binding.backbutton.setOnClickListener {
+        binding.attackbt.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -103,7 +103,7 @@ class CampActivity : AppCompatActivity() {
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
 
-            //
+            //タイマーの情報
             intent.putExtra("CampLevel",growuptimer.toInt())
 
             startActivity(intent)

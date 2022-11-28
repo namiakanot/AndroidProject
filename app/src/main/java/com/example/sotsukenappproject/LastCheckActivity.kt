@@ -1,17 +1,42 @@
 package com.example.sotsukenappproject
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.bluetooth.BluetoothA2dp
 import android.content.Intent
+import android.graphics.Point
+import android.graphics.Rect
+import android.graphics.RectF
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.style.UpdateAppearance
+import android.view.View
+import android.view.animation.DecelerateInterpolator
+import android.widget.ImageView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.FragmentActivity
 import com.example.sotsukenappproject.databinding.ActivityLastCheckBinding
 
 class LastCheckActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLastCheckBinding
 
+
+    var currentAnimator: Animator? = null
+    var shortAnimationDuration: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+
+        //ani
+                binding.button1.setOnClickListener({
+                    zoomImageFromThumb(binding.button1,R.drawable.pop)
+                })
+
+        shortAnimationDuration = resources.getInteger(android.R.integer.config_shortAnimTime)
 
         // プレイヤーの兵力を受け取る
         val myForce: Int = intent.getIntExtra("MY_FORCE", 0)
@@ -53,6 +78,104 @@ class LastCheckActivity : AppCompatActivity() {
         // 自国と敵国の兵力と所要時間を表示する
         showEnemyStatus(prefName, myForce, enemyForce, attackTime)
     }
+    private fun zoomImageFromThumb(thumbView: View, imageResId: Int) {
+        currentAnimator?.cancel()
+
+        val expandedImageView: ImageView = findViewById(R.id.pop)
+        expandedImageView.setImageResource(imageResId)
+
+        val startBoundsInt = Rect()
+        val finalBoundsInt = Rect()
+        val globalOffset = Point()
+
+        thumbView.getGlobalVisibleRect(startBoundsInt)
+        findViewById<View>(R.id.container)
+            .getGlobalVisibleRect(finalBoundsInt, globalOffset)
+        startBoundsInt.offset(-globalOffset.x, -globalOffset.y)
+        finalBoundsInt.offset(-globalOffset.x, -globalOffset.y)
+
+        val startBounds = RectF(startBoundsInt)
+        val finalBounds = RectF(finalBoundsInt)
+
+        val startScale: Float
+        if ((finalBounds.width() / finalBounds.height() > startBounds.width() / startBounds.height())) {
+
+            startScale = startBounds.height() / finalBounds.height()
+            val startWidth: Float = startScale * finalBounds.width()
+            val deltaWidth: Float = (startWidth - startBounds.width()) / 2
+            startBounds.left -= deltaWidth.toInt()
+            startBounds.right += deltaWidth.toInt()
+        } else {
+
+            startScale = startBounds.width() / finalBounds.width()
+            val startHeight: Float = startScale * finalBounds.height()
+            val deltaHeight: Float = (startHeight - startBounds.height()) / 2f
+            startBounds.top -= deltaHeight.toInt()
+            startBounds.bottom += deltaHeight.toInt()
+        }
+
+        thumbView.alpha = 0f
+        expandedImageView.visibility = View.VISIBLE
+
+        expandedImageView.pivotX = 0f
+        expandedImageView.pivotY = 0f
+
+        currentAnimator = AnimatorSet().apply {
+            play(
+                ObjectAnimator.ofFloat(
+                    expandedImageView,
+                    View.X,
+                    startBounds.left,
+                    finalBounds.left)
+            ).apply {
+                with(ObjectAnimator.ofFloat(expandedImageView, View.Y, startBounds.top, finalBounds.top))
+                with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_X, startScale, 1f))
+                with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_Y, startScale, 1f))
+            }
+            duration = shortAnimationDuration.toLong()
+            interpolator = DecelerateInterpolator()
+            addListener(object : AnimatorListenerAdapter() {
+
+                override fun onAnimationEnd(animation: Animator) {
+                    currentAnimator = null
+                }
+
+                override fun onAnimationCancel(animation: Animator) {
+                    currentAnimator = null
+                }
+            })
+            start()
+        }
+
+        expandedImageView.setOnClickListener {
+            currentAnimator?.cancel()
+
+            currentAnimator = AnimatorSet().apply {
+                play(ObjectAnimator.ofFloat(expandedImageView, View.X, startBounds.left)).apply {
+                    with(ObjectAnimator.ofFloat(expandedImageView, View.Y, startBounds.top))
+                    with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_X, startScale))
+                    with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_Y, startScale))
+                }
+                duration = shortAnimationDuration.toLong()
+                interpolator = DecelerateInterpolator()
+                addListener(object : AnimatorListenerAdapter() {
+
+                    override fun onAnimationEnd(animation: Animator) {
+                        thumbView.alpha = 1f
+                        expandedImageView.visibility = View.GONE
+                        currentAnimator = null
+                    }
+
+                    override fun onAnimationCancel(animation: Animator) {
+                        thumbView.alpha = 1f
+                        expandedImageView.visibility = View.GONE
+                        currentAnimator = null
+                    }
+                })
+                start()
+            }
+        }
+    }
 
 
     /* 進行時間の計算 */
@@ -89,4 +212,5 @@ class LastCheckActivity : AppCompatActivity() {
         val second: Long = attackTime / 1000L % 60L
         binding.attackTime.setText("所要時間：%1d時間%2$02d分%3$02d秒".format(hour, minute, second))
     }
+
 }

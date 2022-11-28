@@ -36,7 +36,7 @@ class SettingActivity : AppCompatActivity() {
         setContentView(view)
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
-        binding.backbutton.setOnClickListener {
+        binding.attackbt.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
@@ -70,6 +70,7 @@ class SettingActivity : AppCompatActivity() {
 
                 override fun onStartTrackingTouch(volume_bar: SeekBar) {
                     soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+                    setVolumeControlStream(AudioManager.STREAM_MUSIC)
                 }
 
                 override fun onStopTrackingTouch(volume_bar: SeekBar) {
