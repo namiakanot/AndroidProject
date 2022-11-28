@@ -33,17 +33,8 @@ class AttackCountDownActivity : AppCompatActivity() {
         binding = ActivityAttackCountDownBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        var times = 0 //intent.getIntExtra("",0)   "タイマーの取得"
-
-        binding.standByTimer.text = "${times}：00"
-        val timer = CampTimer((times * 60 * 1000).toLong(), 100)
-        binding.timerStart.setOnClickListener {
-            timer.start()
-        }
-        binding.timerStop.setOnClickListener {
-
             var times = 0 //intent.getIntExtra("",0)   "タイマーの取得"
+
 
             binding.standByTimer.text = "${times}：00"
             val timer = CampTimer((times * 60 * 1000).toLong(), 100)
@@ -55,4 +46,4 @@ class AttackCountDownActivity : AppCompatActivity() {
             }
         }
     }
-}
+
