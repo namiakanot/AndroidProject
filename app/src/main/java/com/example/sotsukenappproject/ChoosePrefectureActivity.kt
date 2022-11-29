@@ -48,46 +48,58 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         binding.wakayama.setOnClickListener { onPrefectureButtonTapped("wakayama", myForce) }
         binding.mie.setOnClickListener { onPrefectureButtonTapped("mie", myForce) }
         binding.siga.setOnClickListener { onPrefectureButtonTapped("siga", myForce) }
-        binding.osakaBt.setOnClickListener { onPrefectureButtonTapped("osaka", myForce)
-        //enemylevel =
-        }
-        binding.kyotoBt.setOnClickListener { onPrefectureButtonTapped("kyoto", myForce)
-        //enemylevel =
-        }
-        binding.naraBt.setOnClickListener { onPrefectureButtonTapped("nara", myForce)
-        //enemylevel =
-        }
-        binding.hyougoBt.setOnClickListener { onPrefectureButtonTapped("hyogo", myForce)
-        //enemylevel =
-        }
-        binding.wakayamaBt.setOnClickListener { onPrefectureButtonTapped("wakayama", myForce)
-        //enemylevel =
-        }
-        binding.mieBt.setOnClickListener { onPrefectureButtonTapped("mie", myForce)
-        //enemylevel =
-         }
-        binding.sigaBt.setOnClickListener { onPrefectureButtonTapped("siga", myForce)
-        //enemylevel =
-        }
+//        binding.osakaBt.setOnClickListener { onPrefectureButtonTapped("osaka", myForce)
+//        //enemylevel =
+//            teki.setText(R.string.osaka)
+//        }
+//        binding.kyotoBt.setOnClickListener { onPrefectureButtonTapped("kyoto", myForce)
+//        //enemylevel =
+//        }
+//        binding.naraBt.setOnClickListener { onPrefectureButtonTapped("nara", myForce)
+//        //enemylevel =
+//            teki.setText(R.string.nara)
+//        }
+//        binding.hyougoBt.setOnClickListener { onPrefectureButtonTapped("hyogo", myForce)
+//        //enemylevel =
+//            teki.setText(R.string.hyogo)
+//        }
+//        binding.wakayamaBt.setOnClickListener { onPrefectureButtonTapped("wakayama", myForce)
+//        //enemylevel =
+//        }
+//        binding.mieBt.setOnClickListener { onPrefectureButtonTapped("mie", myForce)
+//        //enemylevel =
+//            teki.setText(R.string.mie)
+//         }
+//        binding.sigaBt.setOnClickListener { onPrefectureButtonTapped("siga", myForce)
+//        //enemylevel =
+//            teki.setText(R.string.shiga)
+//        }
 
         /* 戻るボタン */
         binding.backbutton2.setOnClickListener{
             val intent = Intent( this, GameActivity::class.java )
             startActivity(intent)
         }
+        binding.attackbutton2.setOnClickListener {
+            val intent = Intent(this, LastCheckActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     /* 最終確認画面へ */
     private fun onPrefectureButtonTapped(prefName: String, myForce: Int){
-        val intent = Intent( this, LastCheckActivity::class.java )
-        startActivity(intent)
-        // LastCheckActivityに選択した都道府県名を渡す
-        intent.putExtra("PREF_NAME", prefName)
-        intent.putExtra("MY_FORCE", myForce)
 
-        //相手の情報
-        intent.putExtra("enemy",enemylevel.toInt())
+            val intent = Intent(this, LastCheckActivity::class.java)
+            startActivity(intent)
+            // LastCheckActivityに選択した都道府県名を渡す
+            intent.putExtra("PREF_NAME", prefName)
+            intent.putExtra("MY_FORCE", myForce)
 
-        startActivity(intent)
+            //相手の情報
+            intent.putExtra("enemy", enemylevel.toInt())
+
+            startActivity(intent)
+
     }
 }
