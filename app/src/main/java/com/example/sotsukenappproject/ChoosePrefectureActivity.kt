@@ -1,11 +1,10 @@
 package com.example.sotsukenappproject
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 
 class ChoosePrefectureActivity : AppCompatActivity() {
@@ -29,11 +28,16 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
         val myForce: Int = intent.getIntExtra("MY_FORCE", 0)
 
-
+        val fragmentManager: FragmentManager = supportFragmentManager
         /* 進行先の地図を押す */
         /* 今回は近畿地方のみだが、全国に広げる場合は地方選択からこのActivityに移動する。 */
         /* enemieText変化 */
-        osa.setOnClickListener { teki.setText(R.string.osaka) }
+        osa.setOnClickListener { teki.setText(R.string.osaka)
+            val dialog = popFragment()
+            fragmentManager?.run{
+                dialog.show(this,"osaka")
+            }
+        }
         kyo.setOnClickListener { teki.setText(R.string.kyoto) }
         na.setOnClickListener { teki.setText(R.string.nara) }
         hyo.setOnClickListener { teki.setText(R.string.hyogo) }
@@ -85,7 +89,6 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 
     /* 最終確認画面へ */
     private fun onPrefectureButtonTapped(prefName: String, myForce: Int){
