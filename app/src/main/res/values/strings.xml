@@ -9,7 +9,7 @@
     <string name="osaka">大阪</string>
     <string name="hyogo">兵庫</string>
     <string name="kyoto">京都</string>
-    <string name="shiga">滋賀</string>
+    <string name="siga">滋賀</string>
     <string name="mie">三重</string>
     <string name="wakayama">和歌山</string>
     <string name="nara">奈良</string>
@@ -22,4 +22,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username">"DataStore"</string>
+    <string name="大阪">osaka</string>
 </resources>
