@@ -183,7 +183,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="滋賀"
+        android:text="@string/siga"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"

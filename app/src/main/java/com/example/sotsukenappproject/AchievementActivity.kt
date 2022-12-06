@@ -31,6 +31,9 @@ class AchievementActivity : AppCompatActivity() {
         }
 
         //実績
+        /**
+         * 条件:gameClearCount >= 1 (変数はGameActivityを参照)
+         */
         binding.gold1.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("スマせん者")
@@ -40,6 +43,9 @@ class AchievementActivity : AppCompatActivity() {
 
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+        /**
+         * 条件:enemyForce - userForce >= 100000
+         */
         binding.silver1.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("戦いは数")
@@ -49,6 +55,9 @@ class AchievementActivity : AppCompatActivity() {
 
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+        /**
+         * 条件:kinkiAttackedCount >= 1
+         */
         binding.silver2.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("禁忌のドンメル")
@@ -58,6 +67,9 @@ class AchievementActivity : AppCompatActivity() {
 
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+        /**
+         * 条件:maxAttackTime >= 120
+         */
         binding.bronze1.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("明け方の猛者達")
@@ -67,6 +79,9 @@ class AchievementActivity : AppCompatActivity() {
 
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+        /**
+         * 条件:userForce < enemyForce
+         */
         binding.bronze2.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("精鋭")
@@ -76,6 +91,9 @@ class AchievementActivity : AppCompatActivity() {
 
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
+        /**
+         * 条件:largeCampCount >= 1
+         */
         binding.bronze1.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("鬼教官")
