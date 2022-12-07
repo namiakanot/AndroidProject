@@ -35,10 +35,10 @@ class MainActivity : AppCompatActivity() {
         binding.reserbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
-            val dialog = NameFragment()
-            fragmentManager?.run{
-                dialog.show(this,"username")
-            }
+//            val dialog = NameFragment()
+//            fragmentManager?.run{
+//                dialog.show(this,"username")
+//            }
         }
 
 

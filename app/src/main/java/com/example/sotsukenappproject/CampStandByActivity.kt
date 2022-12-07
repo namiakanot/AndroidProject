@@ -42,6 +42,11 @@ class CampStandByActivity : AppCompatActivity() {
         binding.timerStop.setOnClickListener{
             timer.cancel()
             }
+
+        binding.backbutton2.setOnClickListener {
+            val intent = Intent( this, CampActivity::class.java )
+            startActivity(intent)
+        }
         }
     //カウントダウン処理<<
 
