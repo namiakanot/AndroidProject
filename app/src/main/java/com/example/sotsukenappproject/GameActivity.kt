@@ -24,7 +24,7 @@ class GameActivity : AppCompatActivity() {
         val smallCampCount = pref.getInt("SMALL_COUNT", 0)
 
         // MainActivity から
-        val userName = intent.getStringExtra("USER_NAME")
+        // val userName = intent.getStringExtra("USER_NAME")
         // AttackCountDownActivity から
         val attackTime = intent.getIntExtra("ATTACK_TIME", 0)
 
@@ -53,7 +53,7 @@ class GameActivity : AppCompatActivity() {
         /* ↓進行開始ボタン */
         binding.attackbutton.setOnClickListener {
             val intent = Intent( this, ChoosePrefectureActivity::class.java)
-            intent.putExtra("USER_NAME", userName)
+        //    intent.putExtra("USER_NAME", userName)
             intent.putExtra("USER_FORCE", userForce)
             intent.putExtra("GAME_CLEAR_COUNT", gameClearCount)
             intent.putExtra("KINKI_ATTACKED_COUNT", kinkiAttackedCount)
@@ -64,19 +64,19 @@ class GameActivity : AppCompatActivity() {
         }
         /* ↑進行開始ボタン */
 
-        saveUserData(userName!!, userForce, gameClearCount, kinkiAttackedCount, attackTime)
+        saveUserData(/*userName!!, */userForce, gameClearCount, kinkiAttackedCount, attackTime)
         saveCampCount(largeCampCount, middleCampCount, smallCampCount)
     }
 
 
     // データ保存
     @Suppress("NAME_SHADOWING")
-    private fun saveUserData(userName: String, userForce: Int, gameClearCount: Int, kinkiAttackedCount: Int, attackTime: Int) {
+    private fun saveUserData(/*userName: String,*/ userForce: Int, gameClearCount: Int, kinkiAttackedCount: Int, attackTime: Int) {
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
-        val userName = pref.getString("USER_NAME", userName)
-        val userForce = pref.getInt("USER_FORCE", userForce)
-        val gameClearCount = pref.getInt("GAME_CLEAR_COUNT", gameClearCount)
-        val kinkiAttackedCount = pref.getInt("KINKI_ATTACKED_COUNT", kinkiAttackedCount)
+        // val userName = pref.getString("USER_NAME", userName)
+        val userForce = pref.getInt("USER_FORCE", 960)
+        val gameClearCount = pref.getInt("GAME_CLEAR_COUNT", 0)
+        val kinkiAttackedCount = pref.getInt("KINKI_ATTACKED_COUNT", 0)
         val maxAttackTime = pref.getInt("MAX_ATTACK_TIME", 0)
 
         val edtMaxAttackTime: Int =
@@ -93,7 +93,7 @@ class GameActivity : AppCompatActivity() {
             }
 
         val editor = pref.edit()
-        editor.putString("USER_NAME", userName)
+        editor//.putString("USER_NAME", userName)
             .putInt("USER_FORCE", userForce)
             .putInt("GAME_CLEAR_COUNT", gameClearCount)
             .putInt("KINKI_ATTACKED_COUNT", edtKinkiAttackedCount)
