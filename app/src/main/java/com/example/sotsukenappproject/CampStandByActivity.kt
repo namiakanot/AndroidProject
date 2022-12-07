@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 
 class CampStandByActivity : AppCompatActivity() {
@@ -34,19 +35,20 @@ class CampStandByActivity : AppCompatActivity() {
 
         var times = intent.getIntExtra("CampLevel",0)
 
+        val fragmentManager: FragmentManager = supportFragmentManager
+
         binding.standByTimer.text = "${times}：00"
         val timer = CampTimer((times * 60 * 1000).toLong(),100)
         binding.timerStart.setOnClickListener{
             timer.start()
         }
         binding.timerStop.setOnClickListener{
+            val dialog = checkpopFragment()
+            fragmentManager.run{
+                dialog.show(this,"")
+            }
             timer.cancel()
             }
-
-        binding.backbutton2.setOnClickListener {
-            val intent = Intent( this, CampActivity::class.java )
-            startActivity(intent)
-        }
         }
     //カウントダウン処理<<
 

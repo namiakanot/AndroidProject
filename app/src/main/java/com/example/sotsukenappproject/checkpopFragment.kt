@@ -1,5 +1,6 @@
 package com.example.sotsukenappproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
@@ -16,10 +17,16 @@ class checkpopFragment : DialogFragment(){
 
 
         binding.yesbutton.setOnClickListener{
+            startActivity(Intent(context, CampActivity::class.java))
+        }
+
+        binding.nobutton.setOnClickListener{
+            _binding = null
 
         }
         return binding.root
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

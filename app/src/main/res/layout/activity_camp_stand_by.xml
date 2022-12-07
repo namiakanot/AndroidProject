@@ -60,37 +60,21 @@
         app:layout_constraintVertical_bias="0.302" />
 
     <Button
-        android:id="@+id/backbutton2"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/font"
-        android:text="←戻る"
-        android:textColor="#000000"
-        android:textSize="48sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
-    <Button
         android:id="@+id/timer_stop"
-        android:layout_width="169dp"
-        android:layout_height="61dp"
-        android:backgroundTint="#FFFFFF"
+        android:layout_width="359dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@android:color/background_light"
         android:fontFamily="@font/font"
-        android:text="停止"
-        android:textColor="#000000"
+        android:text="停止して戻る"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="48sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.943" />
 
     <Button
         android:id="@+id/timer_start"
@@ -106,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <TextView
         android:id="@+id/stand_by_timer"
