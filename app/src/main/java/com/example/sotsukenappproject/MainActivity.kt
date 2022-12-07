@@ -1,9 +1,11 @@
 package com.example.sotsukenappproject
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import android.os.Bundle
 import com.example.sotsukenappproject.databinding.ActivityMainBinding
 
@@ -17,8 +19,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        //ダイアログ表示
+        val fragmentManager: FragmentManager = supportFragmentManager
+
         var Begin = findViewById<ImageButton>(R.id.reserbutton)
         var Continue = findViewById<ImageButton>(R.id.continuebutton)
+
 
         // 続きから(元)
 //        Continue.setOnClickListener {
@@ -29,23 +35,12 @@ class MainActivity : AppCompatActivity() {
         binding.reserbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
+            val dialog = NameFragment()
+            fragmentManager?.run{
+                dialog.show(this,"username")
+            }
         }
 
-        // 設定へ
-        binding.settingmode.setOnClickListener {
-            val intent = Intent(this, SettingActivity::class.java)
-            startActivity(intent)
-        }
-        // 育成へ
-        binding.canpmode.setOnClickListener {
-            val intent = Intent(this, CampActivity::class.java)
-            startActivity(intent)
-        }
-        //　実績へ
-        binding.achievementbutton.setOnClickListener {
-            val intent = Intent(this, AchievementActivity::class.java)
-            startActivity(intent)
-        }
 
         player = MediaPlayer.create(this, R.raw.sora)
         player.isLooping = true
