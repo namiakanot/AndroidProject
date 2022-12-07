@@ -24,7 +24,7 @@ class GameActivity : AppCompatActivity() {
         val smallCampCount = pref.getInt("SMALL_COUNT", 0)
 
         // MainActivity から
-        // val userName = intent.getStringExtra("USER_NAME")
+//        val userName = intent.getStringExtra("USER_NAME")
         // AttackCountDownActivity から
         val attackTime = intent.getIntExtra("ATTACK_TIME", 0)
 
@@ -53,6 +53,7 @@ class GameActivity : AppCompatActivity() {
         /* ↓進行開始ボタン */
         binding.attackbutton.setOnClickListener {
             val intent = Intent( this, ChoosePrefectureActivity::class.java)
+//            intent.putExtra("USER_NAME", userName)
         //    intent.putExtra("USER_NAME", userName)
             intent.putExtra("USER_FORCE", userForce)
             intent.putExtra("GAME_CLEAR_COUNT", gameClearCount)

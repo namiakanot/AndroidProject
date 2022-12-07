@@ -23,7 +23,7 @@ class CampActivity : AppCompatActivity() {
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
         binding.backbutton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
 
