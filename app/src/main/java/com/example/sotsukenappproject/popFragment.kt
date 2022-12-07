@@ -21,7 +21,15 @@ class popFragment : DialogFragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         _binding = FragmentPopBinding.inflate(inflater, container, false)
-        binding.popname.text = "R.string.$enemyName"
+        when(enemyName){
+            "osaka" -> binding.popname.text = R.string.osaka.toString()
+            "hyogo" -> binding.popname.text = R.string.hyogo.toString()
+            "kyoto" -> binding.popname.text = R.string.kyoto.toString()
+            "siga" -> binding.popname.text = R.string.siga.toString()
+            "nara" -> binding.popname.text = R.string.nara.toString()
+            "mie" -> binding.popname.text = R.string.mie.toString()
+            "wakayama" -> binding.popname.text = R.string.wakayama.toString()
+        }
         binding.textView16.text = enemyForce.toString()
         val attackTime = calcAttackTime(enemyForce, userForce)
         val hour = attackTime / 60
