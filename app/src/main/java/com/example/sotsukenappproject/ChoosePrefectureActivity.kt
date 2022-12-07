@@ -28,7 +28,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
          */
         val nextAttack: Int = intent.getIntExtra("gameClearCount", 0)
 
-        val userName: String = intent.getStringExtra("USER_NAME")!!
+        // val userName: String = intent.getStringExtra("USER_NAME")!!
         val userForce: Int = intent.getIntExtra("USER_FORCE", 960)
         val attackCount = intent.getIntExtra("KINKI_ATTACKED_COUNT", 0)
 
@@ -54,7 +54,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
-        binding.playerName.text = userName
+        // binding.playerName.text = userName
 //        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
 //        binding.nara.setBackgroundResource(R.color.red)
 //        changePrefColor(nextAttack)
