@@ -74,10 +74,10 @@ class GameActivity : AppCompatActivity() {
     private fun saveUserData(/*userName: String,*/ userForce: Int, gameClearCount: Int, kinkiAttackedCount: Int, attackTime: Int) {
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         // val userName = pref.getString("USER_NAME", userName)
-        val userForce = pref.getInt("USER_FORCE", 960)
-        val gameClearCount = pref.getInt("GAME_CLEAR_COUNT", 0)
-        val kinkiAttackedCount = pref.getInt("KINKI_ATTACKED_COUNT", 0)
-        val maxAttackTime = pref.getInt("MAX_ATTACK_TIME", 0)
+        val userForce = pref.getInt("USER_FORCE", userForce)
+        val gameClearCount = pref.getInt("GAME_CLEAR_COUNT", gameClearCount)
+        val kinkiAttackedCount = pref.getInt("KINKI_ATTACKED_COUNT", kinkiAttackedCount)
+        val maxAttackTime = pref.getInt("MAX_ATTACK_TIME", attackTime)
 
         val edtMaxAttackTime: Int =
             when{
