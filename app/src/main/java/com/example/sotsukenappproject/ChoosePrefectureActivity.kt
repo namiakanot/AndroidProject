@@ -73,7 +73,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         kyo.setOnClickListener { teki.setText(R.string.kyoto)
             val dialog = popFragment()
@@ -86,7 +86,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         na.setOnClickListener { teki.setText(R.string.nara)
             val dialog = popFragment()
@@ -99,7 +99,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         hyo.setOnClickListener { teki.setText(R.string.hyogo)
             val dialog = popFragment()
@@ -112,7 +112,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         mi.setOnClickListener { teki.setText(R.string.mie)
             val dialog = popFragment()
@@ -125,7 +125,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         si.setOnClickListener { teki.setText(R.string.siga)
             val dialog = popFragment()
@@ -138,7 +138,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putInt("user_force", userForce)
             val fragment = popFragment()
 
-            fragment.setArguments(args)
+            fragment.arguments = args
         }
         /* enemieText変化 */
 
@@ -160,6 +160,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
             intent.putExtra("KINKI_ATTACKED_COUNT",attackCount)
+            intent.putExtra("NEXT_ATTACK",nextAttack)
             startActivity(intent)
         }
     }
