@@ -55,9 +55,9 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         val fragmentManager: FragmentManager = supportFragmentManager
 
 //        binding.playerName.text = userName
-        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
-        binding.nara.setBackgroundResource(R.color.red)
-        changePrefColor(nextAttack)
+//        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
+//        binding.nara.setBackgroundResource(R.color.red)
+//        changePrefColor(nextAttack)
         // binding.playerName.text = userName
 //        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
 //        binding.nara.setBackgroundResource(R.color.red)
