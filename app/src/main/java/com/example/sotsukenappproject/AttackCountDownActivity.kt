@@ -3,16 +3,27 @@ package com.example.sotsukenappproject
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.CountDownTimer
+import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityAttackCountDownBinding
 
 
 class AttackCountDownActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAttackCountDownBinding
 
+    var dialog = Attack_popFragment()
+    val fragmentManager: FragmentManager = supportFragmentManager
+
+
+
     //カウントダウン処理>>
     inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
         var isRunning = false
+
+        var dialog = Attack_popFragment()
+        val fragmentManager: FragmentManager = supportFragmentManager
+
+
 
         override fun onTick(millisUntilFinished: Long) {
             val minute = millisUntilFinished / 1000L / 60L
@@ -22,6 +33,13 @@ class AttackCountDownActivity : AppCompatActivity() {
 
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
+
+            fragmentManager?.run{
+                dialog.show(this,)
+            }
+
+
+
         }
     }
 
@@ -38,6 +56,9 @@ class AttackCountDownActivity : AppCompatActivity() {
 
             binding.standByTimer.text = "${times}：00"
             val timer = CampTimer((times * 60 * 1000).toLong(), 100)
+
+
+
             binding.timerStart.setOnClickListener {
                 timer.start()
             }
@@ -46,4 +67,8 @@ class AttackCountDownActivity : AppCompatActivity() {
             }
         }
     }
+
+fun Attack_popFragment.show(fragmentManager: FragmentManager) {
+
+}
 

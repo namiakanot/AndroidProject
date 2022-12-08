@@ -31,6 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.42000002"
         app:srcCompat="@drawable/kinnkitihou" />
+
     <TextView
         android:id="@+id/stand_by_timer"
         android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425"
+        app:layout_constraintVertical_bias="0.179"
         tools:text="00:00" />
 
     <Button

@@ -1,6 +1,5 @@
 package com.example.sotsukenappproject
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -18,6 +17,8 @@ class CampStandByActivity : AppCompatActivity() {
         CountDownTimer(millisInFuture, countDownInterval) {
         var isRunning = false
 
+        val fragmentManager: FragmentManager = supportFragmentManager
+
         override fun onTick(millisUntilFinished: Long) {
             val minute = millisUntilFinished/1000L/60L
             val second = millisUntilFinished/1000L%60L
@@ -26,7 +27,15 @@ class CampStandByActivity : AppCompatActivity() {
 
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
+
+            //タイマー終了後のポップアップ
+            val dialog = Camp_popFragment()
+            fragmentManager.run{
+                dialog.show(this,"")
+            }
+
         }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +56,7 @@ class CampStandByActivity : AppCompatActivity() {
         }
 
         binding.timerStop.setOnClickListener{
+            //途中終了時のポップアップ
             val dialog = checkpopFragment()
             fragmentManager.run{
                 dialog.show(this,"")
