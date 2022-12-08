@@ -65,7 +65,7 @@
         android:layout_height="77dp"
         android:backgroundTint="@android:color/background_light"
         android:fontFamily="@font/font"
-        android:text="停止して戻る"
+        android:text="中断して戻る"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="48sp"
 

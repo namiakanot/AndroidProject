@@ -3,6 +3,7 @@ package com.example.sotsukenappproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 
@@ -48,21 +49,21 @@ class CampStandByActivity : AppCompatActivity() {
 
         binding.standByTimer.text = "${times}：00"
         val timer = CampTimer((times * 60 * 1000).toLong(),100)
+
         binding.timerStart.setOnClickListener{
             timer.start()
+            binding.timerStart.isClickable = false
         }
+
         binding.timerStop.setOnClickListener{
             //途中終了時のポップアップ
             val dialog = checkpopFragment()
             fragmentManager.run{
                 dialog.show(this,"")
             }
-            timer.cancel()
             }
         }
-    //カウントダウン処理<<
-
-    }
+}
 
 
 
