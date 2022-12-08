@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         var Continue = findViewById<ImageButton>(R.id.continuebutton)
 
 
+        //後で消す
+        binding.atckbutton.setOnClickListener{
+            val intent = Intent(this, AttackCountDownActivity::class.java)
+            startActivity(intent)
+        }
+
         // 続きから(元)
 //        Continue.setOnClickListener {
 //            val intent = Intent(this, GameActivity::class.java)

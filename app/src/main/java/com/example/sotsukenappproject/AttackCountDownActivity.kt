@@ -37,9 +37,6 @@ class AttackCountDownActivity : AppCompatActivity() {
             fragmentManager?.run{
                 dialog.show(this,)
             }
-
-
-
         }
     }
 
