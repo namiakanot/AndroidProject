@@ -1,10 +1,13 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.sotsukenappproject
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet.VISIBLE
 import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 
@@ -67,7 +70,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
         /* enemieText変化 */
         osa.setOnClickListener { teki.setText(R.string.osaka)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"osaka")
             }
@@ -75,12 +78,13 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","osaka")
             args.putInt("enemy_force", enemyForce["osaka"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
+            binding.popFragmentView.visibility = View.VISIBLE
 
             fragment.arguments = args
         }
         kyo.setOnClickListener { teki.setText(R.string.kyoto)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"kyoto")
             }
@@ -88,12 +92,12 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","kyoto")
             args.putInt("enemy_force", enemyForce["kyoto"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
 
             fragment.arguments = args
         }
         na.setOnClickListener { teki.setText(R.string.nara)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"nara")
             }
@@ -101,12 +105,12 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","nara")
             args.putInt("enemy_force", enemyForce["nara"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
 
             fragment.arguments = args
         }
         hyo.setOnClickListener { teki.setText(R.string.hyogo)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"hyogo")
             }
@@ -114,12 +118,12 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","hyogo")
             args.putInt("enemy_force", enemyForce["hyogo"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
 
             fragment.arguments = args
         }
         mi.setOnClickListener { teki.setText(R.string.mie)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"mie")
             }
@@ -127,12 +131,12 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","mie")
             args.putInt("enemy_force", enemyForce["mie"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
 
             fragment.arguments = args
         }
         si.setOnClickListener { teki.setText(R.string.siga)
-            val dialog = popFragment()
+            val dialog = PopFragment()
             fragmentManager.run{
                 dialog.show(this,"siga")
             }
@@ -140,7 +144,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             args.putString("enemy_name","siga")
             args.putInt("enemy_force", enemyForce["siga"]!!)
             args.putInt("user_force", userForce)
-            val fragment = popFragment()
+            val fragment = PopFragment()
 
             fragment.arguments = args
         }

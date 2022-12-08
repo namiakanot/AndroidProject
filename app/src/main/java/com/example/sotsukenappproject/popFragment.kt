@@ -1,17 +1,12 @@
 package com.example.sotsukenappproject
 
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.service.voice.VoiceInteractionSession.VisibleActivityCallback
 import android.view.*
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
-import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 import com.example.sotsukenappproject.databinding.FragmentPopBinding
 
-class popFragment : DialogFragment(){
+class PopFragment : DialogFragment(){
 
     private var _binding: FragmentPopBinding? = null
     private val binding get() = _binding!!
@@ -19,7 +14,7 @@ class popFragment : DialogFragment(){
     private val enemyForce = requireArguments().getInt("enemy_force")
     private val userForce = requireArguments().getInt("user_force")
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
         _binding = FragmentPopBinding.inflate(inflater, container, false)
         when(enemyName){
             "osaka" -> binding.popname.text = R.string.osaka.toString()
