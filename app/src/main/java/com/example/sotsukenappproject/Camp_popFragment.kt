@@ -3,8 +3,8 @@ package com.example.sotsukenappproject
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
-import com.example.sotsukenappproject.databinding.FragmentAFBinding
 import com.example.sotsukenappproject.databinding.FragmentCampPopBinding
+
 
 class Camp_popFragment : DialogFragment(){
 

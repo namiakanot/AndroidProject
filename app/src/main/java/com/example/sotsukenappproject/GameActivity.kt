@@ -25,7 +25,7 @@ class GameActivity : AppCompatActivity() {
 
         // MainActivity から
 //        val userName = intent.getStringExtra("USER_NAME")
-        // AttackCountDownActivity から
+        // AttackCountDownActivity.kt から
         val attackTime = intent.getIntExtra("ATTACK_TIME", 0)
 
         /* ↓フッターメニュー */
