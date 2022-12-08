@@ -38,7 +38,7 @@ class CampStandByActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?,) {
         super.onCreate(savedInstanceState)
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
         setContentView(binding.root)

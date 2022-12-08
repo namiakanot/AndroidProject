@@ -78,10 +78,10 @@
 
     <Button
         android:id="@+id/timer_start"
-        android:layout_width="169dp"
-        android:layout_height="61dp"
+        android:layout_width="158dp"
+        android:layout_height="71dp"
         android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/gkktt851"
         android:text="開始"
         android:textColor="#000000"
         android:textSize="48sp"
