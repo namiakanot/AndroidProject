@@ -8,20 +8,15 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/pop" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="466dp"
-        android:text="TextView" />
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="432dp"
+            android:src="@drawable/pop" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
