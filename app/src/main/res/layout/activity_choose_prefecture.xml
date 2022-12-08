@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002"
+        app:layout_constraintVertical_bias="0.419"
         app:srcCompat="@drawable/kinnkitihou" />
 
     <ImageView
@@ -331,5 +331,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/popFragmentView"
+        android:name="com.example.sotsukenappproject.PopFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_pop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
