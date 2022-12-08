@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.DialogFragment
 import com.example.sotsukenappproject.databinding.FragmentCampPopBinding
 
+
 class Camp_popFragment : DialogFragment(){
 
     private var _binding: FragmentCampPopBinding? = null

@@ -29,7 +29,7 @@ class CampStandByActivity : AppCompatActivity() {
             binding.standByTimer.text = "0:00"
 
             //タイマー終了後のポップアップ
-            val dialog = Camp_popFragment()
+            val dialog =  Camp_popFragment()
             fragmentManager.run{
                 dialog.show(this,"")
             }
