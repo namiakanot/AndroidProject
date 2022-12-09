@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet.VISIBLE
 import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 
@@ -29,22 +28,22 @@ class ChoosePrefectureActivity : AppCompatActivity() {
          * kinki_enemy["nara","mie","siga","kyoto","hyogo","osaka"]
          * kinki_enemy[nextAttack] の国へ進行する
          */
-        val nextAttack: Int = intent.getIntExtra("gameClearCount", 0)
-
-        // val userName: String = intent.getStringExtra("USER_NAME")!!
-        val userForce: Int = intent.getIntExtra("USER_FORCE", 960)
-        val attackCount = intent.getIntExtra("KINKI_ATTACKED_COUNT", 0)
-
-        val enemyForce: Map<String, Int> = mapOf(
-            "siga" to 1780,
-            "kyoto" to 2610,
-            "osaka" to 8830,
-            "hyogo" to 5530,
-            "nara" to 1360,
-        // 和歌山は1周目では進行済みである
-            "wakayama" to 960,
-            "mie" to 1410
-        )
+//        val nextAttack: Int = intent.getIntExtra("gameClearCount", 0)
+//
+//        val userName: String = intent.getStringExtra("USER_NAME")!!
+//        val userForce: Int = intent.getIntExtra("USER_FORCE", 960)
+//        val attackCount = intent.getIntExtra("KINKI_ATTACKED_COUNT", 0)
+//
+//        val enemyForce: Map<String, Int> = mapOf(
+//            "siga" to 1780,
+//            "kyoto" to 2610,
+//            "osaka" to 8830,
+//            "hyogo" to 5530,
+//            "nara" to 1360,
+//        // 和歌山は1周目では進行済みである
+//            "wakayama" to 960,
+//            "mie" to 1410
+//        )
         // 取得するとき -> enemyForce["osaka"] -> 8830
 
         val teki = findViewById<TextView>(R.id.enemie)
@@ -58,96 +57,94 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         val fragmentManager: FragmentManager = supportFragmentManager
 
 //        binding.playerName.text = userName
-//        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
-//        binding.nara.setBackgroundResource(R.color.red)
-//        changePrefColor(nextAttack)
-        // binding.playerName.text = userName
-//        binding.wakayama.setBackgroundResource(R.color.blue_overlay)
-//        binding.nara.setBackgroundResource(R.color.red)
-//        changePrefColor(nextAttack)
         /* 進行先の地図を押す */
         /* 今回は近畿地方のみだが、全国に広げる場合は地方選択からこのActivityに移動する。 */
 
         /* enemieText変化 */
-        osa.setOnClickListener { teki.setText(R.string.osaka)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"osaka")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","osaka")
-            args.putInt("enemy_force", enemyForce["osaka"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-            binding.popFragmentView.visibility = View.VISIBLE
-
-            fragment.arguments = args
-        }
-        kyo.setOnClickListener { teki.setText(R.string.kyoto)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"kyoto")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","kyoto")
-            args.putInt("enemy_force", enemyForce["kyoto"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-
-            fragment.arguments = args
-        }
-        na.setOnClickListener { teki.setText(R.string.nara)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"nara")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","nara")
-            args.putInt("enemy_force", enemyForce["nara"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-
-            fragment.arguments = args
-        }
-        hyo.setOnClickListener { teki.setText(R.string.hyogo)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"hyogo")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","hyogo")
-            args.putInt("enemy_force", enemyForce["hyogo"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-
-            fragment.arguments = args
-        }
-        mi.setOnClickListener { teki.setText(R.string.mie)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"mie")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","mie")
-            args.putInt("enemy_force", enemyForce["mie"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-
-            fragment.arguments = args
-        }
-        si.setOnClickListener { teki.setText(R.string.siga)
-            val dialog = PopFragment()
-            fragmentManager.run{
-                dialog.show(this,"siga")
-            }
-            val args = Bundle()
-            args.putString("enemy_name","siga")
-            args.putInt("enemy_force", enemyForce["siga"]!!)
-            args.putInt("user_force", userForce)
-            val fragment = PopFragment()
-
-            fragment.arguments = args
-        }
+//        osa.setOnClickListener { teki.setText(R.string.osaka)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"osaka")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","osaka")
+//            args.putInt("enemy_force", enemyForce["osaka"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//            binding.popFragmentView.visibility = View.VISIBLE
+//
+//            fragment.arguments = args
+//        }
+//        kyo.setOnClickListener { teki.setText(R.string.kyoto)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"kyoto")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","kyoto")
+//            args.putInt("enemy_force", enemyForce["kyoto"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//
+//            binding.popFragmentView.visibility = View.VISIBLE
+//            fragment.arguments = args
+//        }
+//        na.setOnClickListener { teki.setText(R.string.nara)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"nara")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","nara")
+//            args.putInt("enemy_force", enemyForce["nara"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//
+//            binding.popFragmentView.visibility = View.VISIBLE
+//            fragment.arguments = args
+//        }
+//        hyo.setOnClickListener { teki.setText(R.string.hyogo)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"hyogo")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","hyogo")
+//            args.putInt("enemy_force", enemyForce["hyogo"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//
+//            binding.popFragmentView.visibility = View.VISIBLE
+//            fragment.arguments = args
+//        }
+//        mi.setOnClickListener { teki.setText(R.string.mie)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"mie")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","mie")
+//            args.putInt("enemy_force", enemyForce["mie"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//
+//            binding.popFragmentView.visibility = View.VISIBLE
+//            fragment.arguments = args
+//        }
+//        si.setOnClickListener { teki.setText(R.string.siga)
+//            val dialog = PopFragment()
+//            fragmentManager.run{
+//                dialog.show(this,"siga")
+//            }
+//            val args = Bundle()
+//            args.putString("enemy_name","siga")
+//            args.putInt("enemy_force", enemyForce["siga"]!!)
+//            args.putInt("user_force", userForce)
+//            val fragment = PopFragment()
+//
+//            binding.popFragmentView.visibility = View.VISIBLE
+//            fragment.arguments = args
+//        }
         /* enemieText変化 */
 
 //        この機能はβ版では実装しない
@@ -167,8 +164,8 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         }
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
-            intent.putExtra("KINKI_ATTACKED_COUNT",attackCount)
-            intent.putExtra("NEXT_ATTACK",nextAttack)
+//            intent.putExtra("KINKI_ATTACKED_COUNT",attackCount)
+//            intent.putExtra("NEXT_ATTACK",nextAttack)
             startActivity(intent)
         }
     }
@@ -189,34 +186,4 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 //            startActivity(intent)
 //
 //    }
-
-    private fun changePrefColor(nextAttack: Int){
-        val kinkiEnemy: Array<String> = arrayOf("nara", "mie", "siga", "kyoto", "hyogo", "osaka")
-        val changeBlue = kinkiEnemy[nextAttack]
-
-        // 進行済み -> 青, 次回進行可能 -> 赤
-        when (changeBlue) {
-            "nara" -> {
-                binding.nara.setBackgroundResource(R.color.blue_overlay)
-                binding.mie.setBackgroundResource(R.color.red)
-            }
-            "mie" -> {
-                binding.mie.setBackgroundResource(R.color.blue_overlay)
-                binding.siga.setBackgroundResource(R.color.red)
-            }
-            "siga" -> {
-                binding.siga.setBackgroundResource(R.color.blue_overlay)
-                binding.kyoto.setBackgroundResource(R.color.red)
-            }
-            "kyoto" -> {
-                binding.kyoto.setBackgroundResource(R.color.blue_overlay)
-                binding.hyogo.setBackgroundResource(R.color.red)
-            }
-            "hyogo" -> {
-                binding.hyogo.setBackgroundResource(R.color.blue_overlay)
-                binding.osaka.setBackgroundResource(R.color.red)
-            }
-            else -> binding.osaka.setBackgroundResource(R.color.blue_overlay)
-        }
-    }
 }

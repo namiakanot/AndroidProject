@@ -1,6 +1,5 @@
 package com.example.sotsukenappproject
 
-import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.widget.ImageButton
