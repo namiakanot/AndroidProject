@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         //後で消す
         binding.atckbutton.setOnClickListener{
-            val intent = Intent(this, AttackCountDownActivity::class.java)
+            val intent = Intent(this, AttackCountDownActivity2::class.java)
             startActivity(intent)
         }
 

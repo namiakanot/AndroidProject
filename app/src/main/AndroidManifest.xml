@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SotsukenAppProject">
         <activity
+            android:name=".AttackCountDownActivity2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AttackActivity"
             android:exported="false">
             <meta-data
