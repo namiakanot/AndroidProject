@@ -18,8 +18,8 @@ class AchievementActivity : AppCompatActivity() {
     private var soundResId2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityAchievementBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityAchievementBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
