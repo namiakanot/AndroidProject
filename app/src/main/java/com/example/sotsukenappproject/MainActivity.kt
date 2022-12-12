@@ -22,14 +22,14 @@ class MainActivity : AppCompatActivity() {
         val fragmentManager: FragmentManager = supportFragmentManager
 
         var Begin = findViewById<ImageButton>(R.id.reserbutton)
-        var Continue = findViewById<ImageButton>(R.id.continuebutton)
+//        var Continue = findViewById<ImageButton>(R.id.continuebutton)
 
 
         //後で消す
-        binding.atckbutton.setOnClickListener{
-            val intent = Intent(this, AttackCountDownActivity2::class.java)
-            startActivity(intent)
-        }
+//        binding.atckbutton.setOnClickListener{
+//            val intent = Intent(this, AttackCountDownActivity2::class.java)
+//            startActivity(intent)
+//        }
 
         // 続きから(元)
 //        Continue.setOnClickListener {

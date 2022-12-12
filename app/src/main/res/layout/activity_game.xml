@@ -82,7 +82,7 @@
         android:layout_width="169dp"
         android:layout_height="37dp"
         android:fontFamily="@font/gkktt851"
-        android:text="TextView"
+        android:text="player"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

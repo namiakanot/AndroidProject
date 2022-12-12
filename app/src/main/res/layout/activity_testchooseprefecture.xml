@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoosePrefectureActivity">
+    tools:context=".testchooseprefectureActivity">
 
     <ImageView
         android:id="@+id/background"
@@ -34,116 +34,6 @@
         app:layout_constraintVertical_bias="0.419"
         app:srcCompat="@drawable/kinnkitihou" />
 
-    <ImageView
-        android:id="@+id/hyogo"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginEnd="184dp"
-        android:src="@drawable/hyougo"
-        android:tint="@color/red2"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/hyougo" />
-
-    <ImageView
-        android:id="@+id/osaka"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:src="@drawable/oosaka"
-        android:tint="@color/red2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455"
-        app:srcCompat="@drawable/oosaka" />
-
-    <ImageView
-        android:id="@+id/kyoto"
-        android:layout_width="170dp"
-        android:layout_height="185dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/kyouto"
-        android:tint="@color/red2"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998"
-        app:srcCompat="@drawable/kyouto" />
-
-
-    <ImageView
-        android:id="@+id/siga"
-        android:layout_width="160dp"
-        android:layout_height="170dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/siga"
-        android:tint="@color/red2"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267"
-        app:srcCompat="@drawable/siga" />
-
-    <ImageView
-        android:id="@+id/mie"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="196dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/mie"
-        android:tint="@color/red2"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517"
-        app:srcCompat="@drawable/mie" />
-
-    <ImageView
-        android:id="@+id/nara"
-        android:layout_width="160dp"
-        android:layout_height="170dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/nara"
-        android:tint="@color/red2"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.665"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57"
-        app:srcCompat="@drawable/nara" />
-
-    <ImageView
-        android:id="@+id/wakayama"
-        android:layout_width="150dp"
-        android:layout_height="160dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/wakayama"
-        android:tint="@color/red2"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684"
-        app:srcCompat="@drawable/wakayama" />
 
     <Button
         android:id="@+id/hyougo_bt"
@@ -188,10 +78,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintHorizontal_bias="0.728"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <Button
         android:id="@+id/osaka_bt"
@@ -332,16 +222,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/popFragmentView"
-        android:name="com.example.sotsukenappproject.PopFragment"
+    <TextView
+        android:id="@+id/testhei"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:text="00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_pop" />
+        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
