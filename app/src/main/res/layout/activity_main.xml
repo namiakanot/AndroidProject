@@ -55,7 +55,7 @@
         android:layout_width="263dp"
         android:layout_height="83dp"
         android:fontFamily="@font/hkkaing"
-        android:text="すたーと"
+        android:text="すたあと"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60sp"

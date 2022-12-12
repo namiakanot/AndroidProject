@@ -41,7 +41,10 @@ class AttackCountDownActivity2 : AppCompatActivity() {
 //            }
         }
         binding.timerStop.setOnClickListener {
-            timer.cancel()
+            val dialog = checkpopFragment2()
+            fragmentManager.run {
+                dialog.show(this, "")
+            }
         }
     }
 
@@ -65,9 +68,10 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
 
-//            fragmentManager?.run{
-//                dialog.show(this,)
-//            }
+            val dialog = checkpopFragment2()
+            fragmentManager.run {
+                dialog.show(this, "")
+            }
 
 
 

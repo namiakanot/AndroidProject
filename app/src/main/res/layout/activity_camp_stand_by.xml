@@ -60,7 +60,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.324" />
-
     <Button
         android:id="@+id/timer_stop"
         android:layout_width="359dp"
@@ -78,6 +77,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943" />
 
+
+
     <Button
         android:id="@+id/timer_start"
         android:layout_width="158dp"
@@ -90,9 +91,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <TextView
         android:id="@+id/stand_by_timer"
