@@ -38,45 +38,33 @@
 
     <ImageButton
         android:id="@+id/reserbutton"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="329dp"
+        android:layout_height="109dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/reset_button"
+        android:src="@drawable/foot_tatami"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background"
-        app:layout_constraintVertical_bias="0.668"
-        app:srcCompat="@drawable/reset_button" />
+        app:layout_constraintVertical_bias="0.757"
+        app:srcCompat="@drawable/foot_tatami" />
 
-    <ImageButton
-        android:id="@+id/continuebutton"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/continue_button"
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="263dp"
+        android:layout_height="83dp"
+        android:fontFamily="@font/hkkaing"
+        android:text="すたーと"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874"
-        app:srcCompat="@drawable/continue_button" />
-
-    <Button
-        android:id="@+id/atckbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="attackcount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.766" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

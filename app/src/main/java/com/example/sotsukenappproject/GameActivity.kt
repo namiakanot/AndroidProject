@@ -52,7 +52,7 @@ class GameActivity : AppCompatActivity() {
 
         /* ↓進行開始ボタン */
         binding.attackbutton.setOnClickListener {
-            val intent = Intent( this, ChoosePrefectureActivity::class.java)
+            val intent = Intent( this, testchooseprefectureActivity::class.java)
 //            intent.putExtra("USER_NAME", userName)
 //            intent.putExtra("USER_NAME", userName)
 //            intent.putExtra("USER_FORCE", userForce)
@@ -63,6 +63,8 @@ class GameActivity : AppCompatActivity() {
                 /* ChoosePrefectureActivityに記述 */
                 /* ↑進行先選択 */
         }
+
+
         /* ↑進行開始ボタン */
 
         // saveUserData(userName!!, userForce, gameClearCount, kinkiAttackedCount, attackTime)

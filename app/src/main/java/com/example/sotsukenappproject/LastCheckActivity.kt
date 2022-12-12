@@ -1,22 +1,9 @@
 package com.example.sotsukenappproject
 
 import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
-import android.bluetooth.BluetoothA2dp
 import android.content.Intent
-import android.graphics.Point
-import android.graphics.Rect
-import android.graphics.RectF
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.style.UpdateAppearance
-import android.view.View
-import android.view.animation.DecelerateInterpolator
-import android.widget.ImageView
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.FragmentActivity
 import com.example.sotsukenappproject.databinding.ActivityLastCheckBinding
 
 class LastCheckActivity : AppCompatActivity() {

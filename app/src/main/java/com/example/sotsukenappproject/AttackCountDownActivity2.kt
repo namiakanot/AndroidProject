@@ -65,9 +65,9 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
 
-            fragmentManager?.run{
-                dialog.show(this,)
-            }
+//            fragmentManager?.run{
+//                dialog.show(this,)
+//            }
 
 
 

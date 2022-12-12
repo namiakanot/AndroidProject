@@ -78,7 +78,7 @@
         android:fontFamily="@font/gkktt851"
         android:text="音量"
         android:textAlignment="center"
-        android:textColor="#3E3E3E"
+        android:textColor="@color/black"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
