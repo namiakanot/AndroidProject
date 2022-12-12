@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat.startActivity
 import com.example.sotsukenappproject.databinding.ActivityTestLastCheckBinding
 
 class testLastCheckActivity : AppCompatActivity() {
@@ -22,7 +21,7 @@ class testLastCheckActivity : AppCompatActivity() {
         }
         // 進行を開始する
         binding.startAttackButton.setOnClickListener{
-            val intent = Intent(this, AttackCountDownActivity::class.java )
+            val intent = Intent(this, AttackCountDownActivity2::class.java )
             startActivity(intent)
         }
     }
