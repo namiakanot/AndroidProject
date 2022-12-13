@@ -22,9 +22,10 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         setContentView(view)
 //        setContentView(binding.root)
 
-        var times = 0 //intent.getIntExtra("",0)   "タイマーの取得"
+        //45は発表用
+        var times = 45 //intent.getIntExtra("",0)   "タイマーの取得"
 
-        binding.standByTimer.text = "${times}：00"
+        binding.standByTimer.text = "${45}：00"
         val timer = AttackTimer((times * 60 * 1000).toLong(), 100)
 
         binding.timerStart.setOnClickListener {
@@ -67,11 +68,6 @@ class AttackCountDownActivity2 : AppCompatActivity() {
 
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
-
-            val dialog = checkpopFragment2()
-            fragmentManager.run {
-                dialog.show(this, "")
-            }
 
 
 

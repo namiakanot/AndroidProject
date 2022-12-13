@@ -11,15 +11,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/none"
-        android:scaleType="fitCenter"
-        android:src="@drawable/main_background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background__3_"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/main_background" />
+        app:srcCompat="@drawable/main_background__3_" />
 
     <ImageButton
         android:id="@+id/backButton"
@@ -69,7 +69,7 @@
         android:layout_width="163dp"
         android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
-        android:text="00:00"
+        android:text="45:00"
         android:textAlignment="center"
         android:textSize="48sp"
         android:textStyle="bold"
