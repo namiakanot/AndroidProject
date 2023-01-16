@@ -40,7 +40,7 @@ class LastCheckActivity : AppCompatActivity() {
 
         // 戻るボタン(進行先選択)
         binding.backButton.setOnClickListener{
-            val intent = Intent(this, ChoosePrefectureActivity::class.java )
+            val intent = Intent(this, testchooseprefectureActivity::class.java )
             startActivity(intent)
         }
         // 進行を開始する
@@ -90,7 +90,7 @@ class LastCheckActivity : AppCompatActivity() {
         val hour: Long = attackTime / 1000L / 60L / 60L
         val minute: Long = attackTime / 1000L / 60L
         val second: Long = attackTime / 1000L % 60L
-        binding.attackTime.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
+        binding.attackTime.text = "%1d:%2$02d:%3$02d".format(hour, minute, second)
     }
 
 }

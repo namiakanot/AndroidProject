@@ -21,9 +21,6 @@ class AttackCountDownActivity : AppCompatActivity() {
         var isRunning = false
 
         var dialog = Attack_popFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-
-
 
         override fun onTick(millisUntilFinished: Long) {
             val hour = millisUntilFinished / 1000L / 60L / 60L
@@ -36,7 +33,7 @@ class AttackCountDownActivity : AppCompatActivity() {
             binding.standByTimer.text = "0:00"
 
             fragmentManager.run{
-                dialog.show(this,)
+                dialog.show(this,"")
             }
 
 
@@ -68,8 +65,3 @@ class AttackCountDownActivity : AppCompatActivity() {
         }
     }
 }
-
-fun Attack_popFragment.show(fragmentManager: FragmentManager) {
-
-}
-
