@@ -8,18 +8,20 @@ import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
-import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
+import com.example.sotsukenappproject.databinding.ActivityTestchooseprefectureBinding
 
-class ChoosePrefectureActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityChoosePrefectureBinding
+class testchooseprefectureActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityTestchooseprefectureBinding
     private lateinit var player: MediaPlayer
 
     private lateinit var soundPool: SoundPool
     private var soundResId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityChoosePrefectureBinding.inflate(layoutInflater)
+        binding = ActivityTestchooseprefectureBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
@@ -89,34 +91,27 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
     @SuppressLint("ResourceAsColor")
     private fun changeColor(nextPref: Int) {
-        when (nextPref) {
-            0 -> {
-                binding.wakayamaBt.setTextColor(R.color.light_blue_600)
-                binding.naraBt.setTextColor(R.color.black)
-            }
-            1 -> {
-                binding.naraBt.setTextColor(R.color.light_blue_600)
-                binding.mieBt.setTextColor(R.color.black)
-            }
-            2 -> {
-                binding.mieBt.setTextColor(R.color.light_blue_600)
-                binding.sigaBt.setTextColor(R.color.black)
-            }
-            3 -> {
-                binding.sigaBt.setTextColor(R.color.light_blue_600)
-                binding.kyotoBt.setTextColor(R.color.black)
-            }
-            4 -> {
-                binding.kyotoBt.setTextColor(R.color.light_blue_600)
-                binding.hyougoBt.setTextColor(R.color.black)
-            }
-            5 -> {
-                binding.hyougoBt.setTextColor(R.color.light_blue_600)
-                binding.osakaBt.setTextColor(R.color.black)
-            }
-            6 -> {
-                binding.osakaBt.setTextColor(R.color.light_blue_600)
-            }
+        if (nextPref == 0) {
+            binding.wakayamaBt.setTextColor(R.color.light_blue_600)
+            binding.naraBt.setTextColor(R.color.black)
+        } else if (nextPref == 1){
+            binding.naraBt.setTextColor(R.color.light_blue_600)
+            binding.mieBt.setTextColor(R.color.black)
+        }else if (nextPref == 2){
+            binding.mieBt.setTextColor(R.color.light_blue_600)
+            binding.sigaBt.setTextColor(R.color.black)
+        }else if (nextPref == 3){
+            binding.sigaBt.setTextColor(R.color.light_blue_600)
+            binding.kyotoBt.setTextColor(R.color.black)
+        }else if (nextPref == 4){
+            binding.kyotoBt.setTextColor(R.color.light_blue_600)
+            binding.hyougoBt.setTextColor(R.color.black)
+        }else if (nextPref == 5){
+            binding.hyougoBt.setTextColor(R.color.light_blue_600)
+            binding.osakaBt.setTextColor(R.color.black)
+        }else if (nextPref == 6){
+            binding.naraBt.setTextColor(R.color.light_blue_600)
+            binding.mieBt.setTextColor(R.color.black)
         }
     }
 }
