@@ -2,6 +2,7 @@ package com.example.sotsukenappproject
 
 import android.content.Intent
 import android.media.AudioAttributes
+import android.media.MediaPlayer
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,9 +16,6 @@ import androidx.preference.PreferenceManager
 
 class AchievementActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAchievementBinding
-    private lateinit var soundPool: SoundPool
-    private var soundResId = 0
-    private var soundResId2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +36,8 @@ class AchievementActivity : AppCompatActivity() {
         binding.backBt.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
-            soundPool.play(soundResId2, 1.0f, 100f, 0, 0, 1.0f)
-        }
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
 
         //実績
         /**
@@ -53,7 +51,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /**
          * 銀実績１
@@ -66,7 +63,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /**
          * 銀実績２
@@ -79,7 +75,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /**
          * 銅実績１
@@ -92,7 +87,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /**
          * 銅実績２
@@ -105,7 +99,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /**
          * 銅実績３
@@ -118,7 +111,6 @@ class AchievementActivity : AppCompatActivity() {
                 .setPositiveButton("OK") { dialog, which -> }
                 .show()
 
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
 
         /**
@@ -186,25 +178,5 @@ class AchievementActivity : AppCompatActivity() {
         }
 
         editor.apply()
-    }
-    override fun onResume() {
-        super.onResume()
-        soundPool =
-            SoundPool.Builder().run {
-                val audioAttributes = AudioAttributes.Builder().run {
-                    setUsage(AudioAttributes.USAGE_GAME)
-                    build()
-                }
-                setMaxStreams(1)
-                setAudioAttributes(audioAttributes)
-                build()
-            }
-        soundResId = soundPool.load(this, R.raw.tap, 1)
-        soundResId2 = soundPool.load(this, R.raw.change, 1)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        soundPool.release()
     }
 }

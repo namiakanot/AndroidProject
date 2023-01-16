@@ -30,8 +30,5 @@ class MainActivity : AppCompatActivity() {
         player.start()
     }
 
-    override fun onPause(){
-        super.onPause()
-        player.pause()
-    }
+
 }
