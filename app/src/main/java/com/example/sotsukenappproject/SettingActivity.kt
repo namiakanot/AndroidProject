@@ -7,16 +7,8 @@ import android.media.AudioManager
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
-import android.view.View
-import android.widget.ImageView
 import android.media.MediaPlayer
-import android.os.Handler
-import android.os.Looper
 import android.widget.SeekBar
-import android.view.animation.RotateAnimation
-import android.widget.TextView
 import com.example.sotsukenappproject.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
@@ -39,12 +31,7 @@ class SettingActivity : AppCompatActivity() {
         binding.backBt.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
-            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
-        }
-
-        binding.titlebutton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
 
@@ -83,7 +70,6 @@ class SettingActivity : AppCompatActivity() {
 
     override fun onResume() {
             super.onResume()
-            player.start()
             soundPool =
                SoundPool.Builder().run {
                    val audioAttributes = AudioAttributes.Builder().run {

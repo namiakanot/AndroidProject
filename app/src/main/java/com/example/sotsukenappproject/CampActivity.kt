@@ -25,6 +25,7 @@ class CampActivity : AppCompatActivity() {
         binding.backbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
 
         var textMessage = findViewById<TextView>(R.id.syotyouword)
