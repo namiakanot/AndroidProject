@@ -1,9 +1,9 @@
 package com.example.sotsukenappproject
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
@@ -71,6 +71,11 @@ class CampStandByActivity : AppCompatActivity() {
         }
     }
 
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+        startActivity(Intent(this, GameActivity::class.java))
+//        Toast.makeText(getApplicationContext(), "Good bye!" , Toast.LENGTH_SHORT).show();
+    }
 
 }
 
