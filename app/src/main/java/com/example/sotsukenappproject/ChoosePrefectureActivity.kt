@@ -4,11 +4,10 @@ package com.example.sotsukenappproject
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
+import androidx.preference.PreferenceManager
 
 class ChoosePrefectureActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChoosePrefectureBinding
@@ -20,47 +19,29 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
-        // GameActivityから
-        /**
-         * nextAttackの値による挙動
-         * (1)nextAttack < 7 のとき
-         * kinki_enemy["nara","mie","siga","kyoto","hyogo","osaka"]
-         * kinki_enemy[nextAttack] の国へ進行する
-         */
-//        val nextAttack: Int = intent.getIntExtra("gameClearCount", 0)
-//
-//        val userName: String = intent.getStringExtra("USER_NAME")!!
-//        val userForce: Int = intent.getIntExtra("USER_FORCE", 960)
-//        val attackCount = intent.getIntExtra("KINKI_ATTACKED_COUNT", 0)
-//
-//        val enemyForce: Map<String, Int> = mapOf(
-//            "siga" to 1780,
-//            "kyoto" to 2610,
-//            "osaka" to 8830,
-//            "hyogo" to 5530,
-//            "nara" to 1360,
-//        // 和歌山は1周目では進行済みである
-//            "wakayama" to 960,
-//            "mie" to 1410
-//        )
-        // 取得するとき -> enemyForce["osaka"] -> 8830
-
-        val teki = findViewById<TextView>(R.id.enemie)
-        val hyo = findViewById<TextView>(R.id.hyougo_bt)
-        val kyo = findViewById<TextView>(R.id.kyoto_bt)
-        val si = findViewById<TextView>(R.id.siga_bt)
-        val osa = findViewById<TextView>(R.id.osaka_bt)
-        val na = findViewById<TextView>(R.id.nara_bt)
-        val mi = findViewById<TextView>(R.id.mie_bt)
-
+        val userForce = pref.getInt("USER_FORCE",960)
+        val nextPref = pref.getInt("WON_COUNT",0)
+        val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
+        val prefName: Array<String> = arrayOf("R.string.nara","R.string.mie","R.string.siga","R.string.kyoto","R.string.hyougo","R.string.osaka")
         val fragmentManager: FragmentManager = supportFragmentManager
-
-//        binding.playerName.text = userName
-        /* 進行先の地図を押す */
-        /* 今回は近畿地方のみだが、全国に広げる場合は地方選択からこのActivityに移動する。 */
+        val fragment = PopFragment()
 
         /* enemieText変化 */
+        val enemyName = prefName[nextPref]
+        val enemyForce = prefForce[nextPref]
+
+        binding.enemie.text = enemyName
+
+//        binding.osakaBt.setOnClickListener {
+//            binding.enemie.text = R.string.osaka.toString()
+//            val fragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.add(R.id.fragment_container_view_tag, fragment)
+//            fragmentTransaction.commit()
+//        }
+
+
 //        osa.setOnClickListener { teki.setText(R.string.osaka)
 //            val dialog = PopFragment()
 //            fragmentManager.run{
@@ -75,87 +56,8 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 //
 //            fragment.arguments = args
 //        }
-//        kyo.setOnClickListener { teki.setText(R.string.kyoto)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"kyoto")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","kyoto")
-//            args.putInt("enemy_force", enemyForce["kyoto"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//
-//            binding.popFragmentView.visibility = View.VISIBLE
-//            fragment.arguments = args
-//        }
-//        na.setOnClickListener { teki.setText(R.string.nara)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"nara")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","nara")
-//            args.putInt("enemy_force", enemyForce["nara"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//
-//            binding.popFragmentView.visibility = View.VISIBLE
-//            fragment.arguments = args
-//        }
-//        hyo.setOnClickListener { teki.setText(R.string.hyogo)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"hyogo")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","hyogo")
-//            args.putInt("enemy_force", enemyForce["hyogo"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//
-//            binding.popFragmentView.visibility = View.VISIBLE
-//            fragment.arguments = args
-//        }
-//        mi.setOnClickListener { teki.setText(R.string.mie)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"mie")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","mie")
-//            args.putInt("enemy_force", enemyForce["mie"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//
-//            binding.popFragmentView.visibility = View.VISIBLE
-//            fragment.arguments = args
-//        }
-//        si.setOnClickListener { teki.setText(R.string.siga)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"siga")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","siga")
-//            args.putInt("enemy_force", enemyForce["siga"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//
-//            binding.popFragmentView.visibility = View.VISIBLE
-//            fragment.arguments = args
-//        }
-        /* enemieText変化 */
 
-//        この機能はβ版では実装しない
-//
-//        binding.osaka.setOnClickListener { onPrefectureButtonTapped("osaka", myForce) }
-//        binding.kyoto.setOnClickListener { onPrefectureButtonTapped("kyoto", myForce) }
-//        binding.nara.setOnClickListener { onPrefectureButtonTapped("nara", myForce) }
-//        binding.hyogo.setOnClickListener { onPrefectureButtonTapped("hyogo", myForce) }
-//        binding.wakayama.setOnClickListener { onPrefectureButtonTapped("wakayama", myForce) }
-//        binding.mie.setOnClickListener { onPrefectureButtonTapped("mie", myForce) }
-//        binding.siga.setOnClickListener { onPrefectureButtonTapped("siga", myForce) }
+        /* enemieText変化 */
 
         /* 戻るボタン */
         binding.backbutton2.setOnClickListener{
@@ -164,26 +66,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         }
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
-//            intent.putExtra("KINKI_ATTACKED_COUNT",attackCount)
-//            intent.putExtra("NEXT_ATTACK",nextAttack)
             startActivity(intent)
         }
     }
-
-//    この機能はβ版では実装しない
-//    /* 最終確認画面へ */
-//    private fun onPrefectureButtonTapped(prefName: String, myForce: Int){
-//
-//            val intent = Intent(this, LastCheckActivity::class.java)
-//            startActivity(intent)
-//            // LastCheckActivityに選択した都道府県名を渡す
-//            intent.putExtra("PREF_NAME", prefName)
-//            intent.putExtra("MY_FORCE", myForce)
-//
-//            //相手の情報
-//            intent.putExtra("enemy", enemylevel.toInt())
-//
-//            startActivity(intent)
-//
-//    }
 }

@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.sotsukenappproject.databinding.ActivityCampBinding
+import androidx.preference.PreferenceManager
 
 class CampActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCampBinding
@@ -27,13 +28,14 @@ class CampActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
         var textMessage = findViewById<TextView>(R.id.syotyouword)
         var small = findViewById<ImageButton>(R.id.small_grow)
         var middle = findViewById<ImageButton>(R.id.middle_grow)
         var large = findViewById<ImageButton>(R.id.large_grow)
         var timerText = findViewById<TextView>(R.id.timer)
-        var growuptimer : Int = 0
+        var growuptimer = 0
 
 
         //  ボタン押したとき
@@ -105,7 +107,7 @@ class CampActivity : AppCompatActivity() {
             val intent = Intent(this, CampStandByActivity::class.java)
 
             //タイマーの情報
-            intent.putExtra("CampLevel",growuptimer.toInt())
+            intent.putExtra("CampLevel",growuptimer)
 
             startActivity(intent)
 

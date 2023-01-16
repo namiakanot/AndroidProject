@@ -40,7 +40,6 @@
         android:layout_height="250dp"
         android:layout_marginEnd="184dp"
         android:src="@drawable/hyougo"
-        android:tint="@color/red2"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,14 +47,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/hyougo" />
+        app:srcCompat="@drawable/hyougo"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/osaka"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:src="@drawable/oosaka"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -63,7 +62,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.455"
-        app:srcCompat="@drawable/oosaka" />
+        app:srcCompat="@drawable/oosaka"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/kyoto"
@@ -71,7 +71,6 @@
         android:layout_height="185dp"
         android:scaleType="fitXY"
         android:src="@drawable/kyouto"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +78,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.26999998"
-        app:srcCompat="@drawable/kyouto" />
+        app:srcCompat="@drawable/kyouto"
+        app:tint="@color/red2" />
 
 
     <ImageView
@@ -88,7 +88,6 @@
         android:layout_height="170dp"
         android:scaleType="fitXY"
         android:src="@drawable/siga"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +95,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.267"
-        app:srcCompat="@drawable/siga" />
+        app:srcCompat="@drawable/siga"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/mie"
@@ -105,13 +105,13 @@
         android:layout_marginStart="196dp"
         android:scaleType="fitXY"
         android:src="@drawable/mie"
-        android:tint="@color/red2"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.517"
-        app:srcCompat="@drawable/mie" />
+        app:srcCompat="@drawable/mie"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/nara"
@@ -119,7 +119,6 @@
         android:layout_height="170dp"
         android:scaleType="fitXY"
         android:src="@drawable/nara"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +126,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.57"
-        app:srcCompat="@drawable/nara" />
+        app:srcCompat="@drawable/nara"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/wakayama"
@@ -135,7 +135,6 @@
         android:layout_height="160dp"
         android:scaleType="fitXY"
         android:src="@drawable/wakayama"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +142,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.684"
-        app:srcCompat="@drawable/wakayama" />
+        app:srcCompat="@drawable/wakayama"
+        app:tint="@color/red2" />
 
     <Button
         android:id="@+id/hyougo_bt"
@@ -151,7 +151,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="兵庫"
+        android:text="@string/hyougo"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -167,7 +167,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="京都"
+        android:text="@string/kyoto"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -199,7 +199,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="大阪"
+        android:text="@string/osaka"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -215,7 +215,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="奈良"
+        android:text="@string/nara"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -231,7 +231,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="三重"
+        android:text="@string/mie"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -247,7 +247,7 @@
         android:layout_height="127dp"
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
-        android:text="和歌山"
+        android:text="@string/wakayama"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
@@ -262,7 +262,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gkktt851"
-        android:text="player name"
+        android:text="TextView"
         android:textColor="#2863DA"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -277,7 +277,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gkktt851"
-        android:text="enemy name"
+        android:text="TextView"
         android:textColor="#ED1414"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

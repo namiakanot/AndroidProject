@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 
 class CampStandByActivity : AppCompatActivity() {
@@ -37,12 +38,19 @@ class CampStandByActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle?, ) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = pref.edit()
+        val largeCampCount = pref.getInt("LCAMP_COUNT",0)
 
-        var times = intent.getIntExtra("CampLevel", 0)
+        val times = intent.getIntExtra("CampLevel", 0)
+        if (times == 30){
+            editor.putInt("LCAMP_COUNT",largeCampCount + 1)
+        }
+        editor.apply()
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
