@@ -20,7 +20,8 @@ class Attack_popFragment : DialogFragment(){
         _binding = FragmentAttackPopBinding.inflate(inflater, container, false)
 
         binding.backbutton.setOnClickListener{
-            startActivity(Intent(context, GameActivity::class.java))
+            val intent = Intent(context, GameActivity::class.java)
+            startActivity(intent)
             soundPool.play(soundResId2, 1.0f, 100f, 0, 0, 1.0f)
         }
 

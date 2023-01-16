@@ -23,9 +23,12 @@ class AttackCountDownActivity2 : AppCompatActivity() {
 //        setContentView(binding.root)
 
         //45は発表用
-        var times = 45 //intent.getIntExtra("",0)   "タイマーの取得"
+        val times = intent.getIntExtra("ATTACK_TIME",0)
+        val hour: Long = times / 1000L / 60L / 60L
+        val minute: Long = times / 1000L / 60L % 60L
+        val second: Long = times / 1000L % 60L
+        binding.standByTimer.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
 
-        binding.standByTimer.text = "${45}：00"
         val timer = AttackTimer((times * 60 * 1000).toLong(), 100)
 
         binding.timerStart.setOnClickListener {
@@ -61,9 +64,10 @@ class AttackCountDownActivity2 : AppCompatActivity() {
 
 
         override fun onTick(millisUntilFinished: Long) {
-            val minute = millisUntilFinished / 1000L / 60L
+            val hour = millisUntilFinished / 1000L / 60L / 60L
+            val minute = millisUntilFinished / 1000L / 60L % 60L
             val second = millisUntilFinished / 1000L % 60L
-            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
+            binding.standByTimer.text = "%1d:%2$02d:%3$03d".format(hour,minute, second)
         }
 
         override fun onFinish() {
