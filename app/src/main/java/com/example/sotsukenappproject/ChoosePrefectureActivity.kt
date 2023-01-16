@@ -55,12 +55,21 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         val mi = findViewById<TextView>(R.id.mie_bt)
 
         val fragmentManager: FragmentManager = supportFragmentManager
+        val fragment = PopFragment()
+
 
 //        binding.playerName.text = userName
         /* 進行先の地図を押す */
         /* 今回は近畿地方のみだが、全国に広げる場合は地方選択からこのActivityに移動する。 */
 
         /* enemieText変化 */
+        osa.setOnClickListener {
+            binding.enemie.text = R.string.osaka.toString()
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fragment_container_view_tag, fragment)
+            fragmentTransaction.commit()
+        }
+
 //        osa.setOnClickListener { teki.setText(R.string.osaka)
 //            val dialog = PopFragment()
 //            fragmentManager.run{

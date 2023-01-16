@@ -62,6 +62,8 @@ class CampStandByActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
 
 
