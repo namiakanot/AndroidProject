@@ -11,15 +11,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/none"
-        android:scaleType="fitCenter"
-        android:src="@drawable/main_background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background__3_"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/main_background" />
+        app:srcCompat="@drawable/main_background__3_" />
 
     <ImageView
         android:id="@+id/Kinkitihou"
@@ -34,116 +34,6 @@
         app:layout_constraintVertical_bias="0.419"
         app:srcCompat="@drawable/kinnkitihou" />
 
-    <ImageView
-        android:id="@+id/hyogo"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginEnd="184dp"
-        android:src="@drawable/hyougo"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/hyougo"
-        app:tint="@color/red2" />
-
-    <ImageView
-        android:id="@+id/osaka"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:src="@drawable/oosaka"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455"
-        app:srcCompat="@drawable/oosaka"
-        app:tint="@color/red2" />
-
-    <ImageView
-        android:id="@+id/kyoto"
-        android:layout_width="170dp"
-        android:layout_height="185dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/kyouto"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998"
-        app:srcCompat="@drawable/kyouto"
-        app:tint="@color/red2" />
-
-
-    <ImageView
-        android:id="@+id/siga"
-        android:layout_width="160dp"
-        android:layout_height="170dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/siga"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267"
-        app:srcCompat="@drawable/siga"
-        app:tint="@color/red2" />
-
-    <ImageView
-        android:id="@+id/mie"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="196dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/mie"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517"
-        app:srcCompat="@drawable/mie"
-        app:tint="@color/red2" />
-
-    <ImageView
-        android:id="@+id/nara"
-        android:layout_width="160dp"
-        android:layout_height="170dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/nara"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.665"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57"
-        app:srcCompat="@drawable/nara"
-        app:tint="@color/red2" />
-
-    <ImageView
-        android:id="@+id/wakayama"
-        android:layout_width="150dp"
-        android:layout_height="160dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/wakayama"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684"
-        app:srcCompat="@drawable/wakayama"
-        app:tint="@color/red2" />
 
     <Button
         android:id="@+id/hyougo_bt"
@@ -152,7 +42,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/hyougo"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +58,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/kyoto"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,14 +74,14 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/siga"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintHorizontal_bias="0.728"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toTopOf="@+id/Kinkitihou"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <Button
         android:id="@+id/osaka_bt"
@@ -200,7 +90,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/osaka"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -216,7 +106,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/nara"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -232,7 +122,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/mie"
-        android:textColor="#000000"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -248,7 +138,7 @@
         android:background="@color/none"
         android:fontFamily="@font/gkktt851"
         android:text="@string/wakayama"
-        android:textColor="#000000"
+        android:textColor="@color/light_blue_600"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/Kinkitihou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -262,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gkktt851"
-        android:text="TextView"
+        android:text="Player"
         android:textColor="#2863DA"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -277,7 +167,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gkktt851"
-        android:text="TextView"
+        android:text="enemy name"
         android:textColor="#ED1414"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -332,16 +222,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/popFragmentView"
-        android:name="com.example.sotsukenappproject.PopFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_pop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

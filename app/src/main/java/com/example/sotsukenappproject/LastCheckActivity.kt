@@ -40,7 +40,7 @@ class LastCheckActivity : AppCompatActivity() {
 
         // 戻るボタン(進行先選択)
         binding.backButton.setOnClickListener{
-            val intent = Intent(this, TestChoosePrefectureActivity::class.java )
+            val intent = Intent(this, ChoosePrefectureActivity::class.java )
             startActivity(intent)
         }
         // 進行を開始する

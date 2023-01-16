@@ -1,18 +1,22 @@
-@file:Suppress("DEPRECATION")
-
 package com.example.sotsukenappproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
+import android.os.Bundle
+import android.widget.TextView
 import androidx.preference.PreferenceManager
+import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 
 class ChoosePrefectureActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChoosePrefectureBinding
+    private lateinit var player: MediaPlayer
 
-    var enemylevel : Int = 0
+    private lateinit var soundPool: SoundPool
+    private var soundResId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityChoosePrefectureBinding.inflate(layoutInflater)
@@ -20,53 +24,92 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
-
-        val userForce = pref.getInt("USER_FORCE",960)
         val nextPref = pref.getInt("WON_COUNT",0)
-        val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
-        val prefName: Array<String> = arrayOf("R.string.nara","R.string.mie","R.string.siga","R.string.kyoto","R.string.hyougo","R.string.osaka")
-        val fragmentManager: FragmentManager = supportFragmentManager
-        val fragment = PopFragment()
 
-        /* enemieText変化 */
-        val enemyName = prefName[nextPref]
-        val enemyForce = prefForce[nextPref]
+        changeColor(nextPref)
 
-        binding.enemie.text = enemyName
-
-//        binding.osakaBt.setOnClickListener {
-//            binding.enemie.text = R.string.osaka.toString()
-//            val fragmentTransaction = fragmentManager.beginTransaction()
-//            fragmentTransaction.add(R.id.fragment_container_view_tag, fragment)
-//            fragmentTransaction.commit()
-//        }
-
-
-//        osa.setOnClickListener { teki.setText(R.string.osaka)
-//            val dialog = PopFragment()
-//            fragmentManager.run{
-//                dialog.show(this,"osaka")
-//            }
-//            val args = Bundle()
-//            args.putString("enemy_name","osaka")
-//            args.putInt("enemy_force", enemyForce["osaka"]!!)
-//            args.putInt("user_force", userForce)
-//            val fragment = PopFragment()
-//            binding.popFragmentView.visibility = View.VISIBLE
-//
-//            fragment.arguments = args
-//        }
-
-        /* enemieText変化 */
-
-        /* 戻るボタン */
+        //GAME遷移
         binding.backbutton2.setOnClickListener{
             val intent = Intent( this, GameActivity::class.java )
             startActivity(intent)
         }
+
+        //LastCheak遷移
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
             startActivity(intent)
+        }
+
+        val attackken = findViewById<TextView>(R.id.enemie)
+
+        binding.naraBt.setOnClickListener{
+            attackken.setText(R.string.nara)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+        binding.mieBt.setOnClickListener{
+            attackken.setText(R.string.mie)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+        binding.sigaBt.setOnClickListener{
+            attackken.setText(R.string.siga)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+        binding.kyotoBt.setOnClickListener{
+            attackken.setText(R.string.kyoto)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+        binding.hyougoBt.setOnClickListener{
+            attackken.setText(R.string.hyougo)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+        binding.osakaBt.setOnClickListener {
+            attackken.setText(R.string.osaka)
+            soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+        }
+    }
+    override fun onResume() {
+        super.onResume()
+        soundPool =
+            SoundPool.Builder().run {
+                val audioAttributes = AudioAttributes.Builder().run {
+                    setUsage(AudioAttributes.USAGE_GAME)
+                    build()
+                }
+                setMaxStreams(1)
+                setAudioAttributes(audioAttributes)
+                build()
+            }
+        player = MediaPlayer.create(this, R.raw.sora)
+        soundResId = soundPool.load(this, R.raw.change, 1)
+    }
+    override fun onPause() {
+        super.onPause()
+        soundPool.release()
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun changeColor(nextPref: Int) {
+        if (nextPref == 0) {
+            binding.wakayamaBt.setTextColor(R.color.light_blue_600)
+            binding.naraBt.setTextColor(R.color.black)
+        } else if (nextPref == 1){
+            binding.naraBt.setTextColor(R.color.light_blue_600)
+            binding.mieBt.setTextColor(R.color.black)
+        }else if (nextPref == 2){
+            binding.mieBt.setTextColor(R.color.light_blue_600)
+            binding.sigaBt.setTextColor(R.color.black)
+        }else if (nextPref == 3){
+            binding.sigaBt.setTextColor(R.color.light_blue_600)
+            binding.kyotoBt.setTextColor(R.color.black)
+        }else if (nextPref == 4){
+            binding.kyotoBt.setTextColor(R.color.light_blue_600)
+            binding.hyougoBt.setTextColor(R.color.black)
+        }else if (nextPref == 5){
+            binding.hyougoBt.setTextColor(R.color.light_blue_600)
+            binding.osakaBt.setTextColor(R.color.black)
+        }else if (nextPref == 6){
+            binding.naraBt.setTextColor(R.color.light_blue_600)
+            binding.mieBt.setTextColor(R.color.black)
         }
     }
 }
