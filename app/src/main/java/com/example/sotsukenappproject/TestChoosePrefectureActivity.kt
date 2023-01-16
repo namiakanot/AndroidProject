@@ -9,17 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import com.example.sotsukenappproject.databinding.ActivityTestchooseprefectureBinding
+import com.example.sotsukenappproject.databinding.ActivityChoosePrefectureBinding
 
-class TestChoosePrefectureActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityTestchooseprefectureBinding
+class ChoosePrefectureActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityChoosePrefectureBinding
     private lateinit var player: MediaPlayer
 
     private lateinit var soundPool: SoundPool
     private var soundResId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityTestchooseprefectureBinding.inflate(layoutInflater)
+        binding = ActivityChoosePrefectureBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
