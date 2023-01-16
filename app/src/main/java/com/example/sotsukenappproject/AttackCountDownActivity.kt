@@ -26,15 +26,16 @@ class AttackCountDownActivity : AppCompatActivity() {
 
 
         override fun onTick(millisUntilFinished: Long) {
-            val minute = millisUntilFinished / 1000L / 60L
+            val hour = millisUntilFinished / 1000L / 60L / 60L
+            val minute = millisUntilFinished / 1000L / 60L % 60L
             val second = millisUntilFinished / 1000L % 60L
-            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
+            binding.standByTimer.text = "%1d:%2$02d:%3$03d".format(hour,minute, second)
         }
 
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
 
-            fragmentManager?.run{
+            fragmentManager.run{
                 dialog.show(this,)
             }
 
@@ -51,22 +52,22 @@ class AttackCountDownActivity : AppCompatActivity() {
         binding = ActivityAttackCountDownBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-            var times = 0 //intent.getIntExtra("",0)   "タイマーの取得"
+        val times = intent.getIntExtra("ATTACK_TIME",0)
+        val hour: Long = times / 1000L / 60L / 60L
+        val minute: Long = times / 1000L / 60L % 60L
+        val second: Long = times / 1000L % 60L
+        binding.standByTimer.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
 
+        val timer = CampTimer((times * 60 * 1000).toLong(), 100)
 
-            binding.standByTimer.text = "${times}：00"
-            val timer = CampTimer((times * 60 * 1000).toLong(), 100)
-
-
-
-            binding.timerStart.setOnClickListener {
-                timer.start()
-            }
-            binding.timerStop.setOnClickListener {
-                timer.cancel()
-            }
+        binding.timerStart.setOnClickListener {
+            timer.start()
+        }
+        binding.timerStop.setOnClickListener {
+            timer.cancel()
         }
     }
+}
 
 fun Attack_popFragment.show(fragmentManager: FragmentManager) {
 
