@@ -36,8 +36,12 @@ class AttackCountDownActivity : AppCompatActivity() {
                 dialog.show(this,"")
             }
             val pref = PreferenceManager.getDefaultSharedPreferences(this@AttackCountDownActivity)
+            val userForce = pref.getInt("USER_FORCE",960)
             val wonCount = pref.getInt("WON_COUNT", 0)
-            pref.edit().putInt("WON_COUNT",wonCount + 1)
+            val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
+
+            pref.edit().putInt("USER_FORCE", (userForce + prefForce[wonCount] * 0.3).toInt())
+                .putInt("WON_COUNT",wonCount + 1)
                 .apply()
         }
     }
