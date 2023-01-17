@@ -34,13 +34,13 @@ class ChoosePrefectureActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //LastCheak遷移
+        //LastCheck遷移
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
             startActivity(intent)
         }
 
-        val attackken = findViewById<TextView>(R.id.enemie)
+        val attackken = binding.enemie
 
         binding.naraBt.setOnClickListener{
             attackken.setText(R.string.nara)
@@ -89,27 +89,35 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
     @SuppressLint("ResourceAsColor")
     private fun changeColor(nextPref: Int) {
-        if (nextPref == 0) {
-            binding.wakayamaBt.setTextColor(R.color.light_blue_600)
-            binding.naraBt.setTextColor(R.color.black)
-        } else if (nextPref == 1){
-            binding.naraBt.setTextColor(R.color.light_blue_600)
-            binding.mieBt.setTextColor(R.color.black)
-        }else if (nextPref == 2){
-            binding.mieBt.setTextColor(R.color.light_blue_600)
-            binding.sigaBt.setTextColor(R.color.black)
-        }else if (nextPref == 3){
-            binding.sigaBt.setTextColor(R.color.light_blue_600)
-            binding.kyotoBt.setTextColor(R.color.black)
-        }else if (nextPref == 4){
-            binding.kyotoBt.setTextColor(R.color.light_blue_600)
-            binding.hyougoBt.setTextColor(R.color.black)
-        }else if (nextPref == 5){
-            binding.hyougoBt.setTextColor(R.color.light_blue_600)
-            binding.osakaBt.setTextColor(R.color.black)
-        }else if (nextPref == 6){
-            binding.naraBt.setTextColor(R.color.light_blue_600)
-            binding.mieBt.setTextColor(R.color.black)
+        when (nextPref) {
+            0 -> {
+                binding.wakayamaBt.setTextColor(R.color.light_blue_600)
+                binding.naraBt.setTextColor(R.color.black)
+            }
+            1 -> {
+                binding.naraBt.setTextColor(R.color.light_blue_600)
+                binding.mieBt.setTextColor(R.color.black)
+            }
+            2 -> {
+                binding.mieBt.setTextColor(R.color.light_blue_600)
+                binding.sigaBt.setTextColor(R.color.black)
+            }
+            3 -> {
+                binding.sigaBt.setTextColor(R.color.light_blue_600)
+                binding.kyotoBt.setTextColor(R.color.black)
+            }
+            4 -> {
+                binding.kyotoBt.setTextColor(R.color.light_blue_600)
+                binding.hyougoBt.setTextColor(R.color.black)
+            }
+            5 -> {
+                binding.hyougoBt.setTextColor(R.color.light_blue_600)
+                binding.osakaBt.setTextColor(R.color.black)
+            }
+            6 -> {
+                binding.naraBt.setTextColor(R.color.light_blue_600)
+                binding.mieBt.setTextColor(R.color.black)
+            }
         }
     }
 }

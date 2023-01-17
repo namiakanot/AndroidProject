@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.CountDownTimer
 import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityAttackCountDownBinding
 
 
@@ -18,7 +19,6 @@ class AttackCountDownActivity : AppCompatActivity() {
     //カウントダウン処理>>
     inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
-        var isRunning = false
 
         var dialog = Attack_popFragment()
 
@@ -35,9 +35,10 @@ class AttackCountDownActivity : AppCompatActivity() {
             fragmentManager.run{
                 dialog.show(this,"")
             }
-
-
-
+            val pref = PreferenceManager.getDefaultSharedPreferences(this@AttackCountDownActivity)
+            val wonCount = pref.getInt("WON_COUNT", 0)
+            pref.edit().putInt("WON_COUNT",wonCount + 1)
+                .apply()
         }
     }
 
@@ -55,7 +56,7 @@ class AttackCountDownActivity : AppCompatActivity() {
         val second: Long = times / 1000L % 60L
         binding.standByTimer.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
 
-        val timer = CampTimer((times * 60 * 1000).toLong(), 100)
+        val timer = CampTimer((times * 60 * 1000).toLong(), 1000)
 
         binding.timerStart.setOnClickListener {
             timer.start()

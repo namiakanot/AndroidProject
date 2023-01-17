@@ -49,15 +49,9 @@ class GameActivity : AppCompatActivity() {
         binding.attackbutton.setOnClickListener {
             val intent = Intent( this, ChoosePrefectureActivity::class.java)
             startActivity(intent)
-                /* ↓進行先選択 */
-                /* ChoosePrefectureActivityに記述 */
-                /* ↑進行先選択 */
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
         /* ↑進行開始ボタン */
-
-        // saveUserData(userName!!, userForce, gameClearCount, kinkiAttackedCount, attackTime)
-        // saveCampCount(largeCampCount, middleCampCount, smallCampCount)
 
     }
 
