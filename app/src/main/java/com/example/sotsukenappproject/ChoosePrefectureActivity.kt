@@ -36,7 +36,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
 
         //LastCheck遷移
         binding.attackbutton2.setOnClickListener {
-            val intent = Intent(this, LastCheckActivity::class.java)
+            val intent = Intent(this, TestLastCheckActivity::class.java)
             startActivity(intent)
         }
 
