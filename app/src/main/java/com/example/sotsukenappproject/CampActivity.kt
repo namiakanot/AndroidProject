@@ -22,13 +22,17 @@ class CampActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val userForce = pref.getInt("USER_FORCE",960)
+        binding.military1.text = userForce.toString()
+
+
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
         binding.backbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
-        val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
         var textMessage = findViewById<TextView>(R.id.syotyouword)
         var small = findViewById<ImageButton>(R.id.small_grow)

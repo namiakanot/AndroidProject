@@ -6,6 +6,7 @@ import android.media.MediaPlayer
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
@@ -20,6 +21,10 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val userForce = pref.getInt("USER_FORCE",960)
+        binding.military.text = userForce.toString()
 
         /* ↓フッターメニュー */
         // 設定ボタン
