@@ -47,8 +47,10 @@ class CampStandByActivity : AppCompatActivity() {
         val largeCampCount = pref.getInt("LCAMP_COUNT",0)
 
         val times = intent.getIntExtra("CampLevel", 0)
-        if (times == 30){
+        if (times >= 30){
             editor.putInt("LCAMP_COUNT",largeCampCount + 1)
+            pref.edit().putInt("SAVE_CAMP_TIME",times)
+                .apply()
         }
         editor.apply()
 
@@ -64,7 +66,7 @@ class CampStandByActivity : AppCompatActivity() {
 
         binding.timerStop.setOnClickListener {
             //途中終了時のポップアップ
-            val dialog = checkpopFragment()
+            val dialog = CheckPopFragment()
             fragmentManager.run {
                 dialog.show(this, "")
             }

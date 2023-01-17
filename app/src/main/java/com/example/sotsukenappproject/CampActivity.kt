@@ -24,8 +24,15 @@ class CampActivity : AppCompatActivity() {
 
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val userForce = pref.getInt("USER_FORCE",960)
-        binding.military1.text = userForce.toString()
+        val campFailedFlag = intent.getBooleanExtra("CAMP_FAILED_FLAG",false)
+        val largeCampCount = pref.getInt("LCAMP_COUNT",0)
+        val saveCampTime = pref.getInt("SAVE_CAMP_TIME",0)
+        if( campFailedFlag && (saveCampTime >= 30) ){
+            pref.edit().putInt("LCAMP_COUNT",largeCampCount - 1)
+                .apply()
+        }
 
+        binding.military1.text = userForce.toString()
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
         binding.backbutton.setOnClickListener {

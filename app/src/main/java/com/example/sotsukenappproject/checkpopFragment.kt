@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
+import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.FragmentCheckpopBinding
 
-class checkpopFragment : DialogFragment(){
+class CheckPopFragment : DialogFragment(){
 
     private var _binding: FragmentCheckpopBinding? = null
     private val binding get() = _binding!!
@@ -15,9 +16,11 @@ class checkpopFragment : DialogFragment(){
         _binding = FragmentCheckpopBinding.inflate(inflater, container, false)
         super.onCreate(savedInstanceState)
 
-
         binding.yesbutton.setOnClickListener{
-            startActivity(Intent(context, CampActivity::class.java))
+            val intent = Intent(context, CampActivity::class.java)
+            val campFailedFlag = true
+            intent.putExtra("CAMP_FAILED_FLAG",campFailedFlag)
+            startActivity(intent)
         }
 
         binding.nobutton.setOnClickListener{
