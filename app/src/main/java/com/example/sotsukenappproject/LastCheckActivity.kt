@@ -1,6 +1,5 @@
 package com.example.sotsukenappproject
 
-import android.animation.Animator
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,18 +10,11 @@ import androidx.preference.PreferenceManager
 class LastCheckActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLastCheckBinding
 
-
-    var currentAnimator: Animator? = null
-    var shortAnimationDuration: Int = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
-
-
-        shortAnimationDuration = resources.getInteger(android.R.integer.config_shortAnimTime)
 
         val userForce = pref.getInt("USER_FORCE",960)
         val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
@@ -38,6 +30,9 @@ class LastCheckActivity : AppCompatActivity() {
         // 進行時間
         val attackTime: Long = calcAttackTime(factUserForce.toInt(), factEnemyForce.toInt()).toLong()
 
+        // 自国と敵国の兵力と所要時間を表示する
+        showEnemyStatus(attackPref, factUserForce.toInt(), factEnemyForce.toInt(), attackTime)
+
         // 戻るボタン(進行先選択)
         binding.backButton.setOnClickListener{
             val intent = Intent(this, ChoosePrefectureActivity::class.java )
@@ -49,9 +44,6 @@ class LastCheckActivity : AppCompatActivity() {
             intent.putExtra("ATTACK_TIME",attackTime)
             startActivity(intent)
         }
-
-        // 自国と敵国の兵力と所要時間を表示する
-        showEnemyStatus(attackPref, factUserForce.toInt(), factEnemyForce.toInt(), attackTime)
     }
 
     /* 進行時間の計算 */
