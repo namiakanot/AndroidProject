@@ -7,7 +7,7 @@ import android.os.Bundle
 import com.example.sotsukenappproject.databinding.ActivityTestLastCheckBinding
 import androidx.preference.PreferenceManager
 
-class testLastCheckActivity : AppCompatActivity() {
+class TestLastCheckActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTestLastCheckBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,10 +73,10 @@ class testLastCheckActivity : AppCompatActivity() {
     /* 情報を表示する(テキスト要素の書き換え) */
     @SuppressLint("SetTextI18n")
     private fun showEnemyStatus(enemyNumber: Int, myForce: Int, enemyForce: Int, attackTime: Long){
-        val prefName: Array<Int> = arrayOf(R.string.nara,R.string.mie,R.string.siga,R.string.kyoto,R.string.hyougo,R.string.osaka)
+        val prefName: Array<String> = arrayOf("奈良","三重","滋賀","京都","兵庫","大阪")
         val enemyName = prefName[enemyNumber]
         binding.myarmy.text = "Player"
-        binding.enemyName.text = enemyName.toString()
+        binding.enemyName.text = enemyName
         binding.myForce.text = myForce.toString()
         binding.enemyForce.text = enemyForce.toString()
 
@@ -85,6 +85,4 @@ class testLastCheckActivity : AppCompatActivity() {
         val second: Long = attackTime / 1000L % 60L
         binding.attackTime.text = "%1d:%2$02d:%3$02d".format(hour, minute, second)
     }
-
-
 }
