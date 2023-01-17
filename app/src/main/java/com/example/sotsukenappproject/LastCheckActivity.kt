@@ -12,6 +12,7 @@ class LastCheckActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityLastCheckBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         val pref = PreferenceManager.getDefaultSharedPreferences(this)

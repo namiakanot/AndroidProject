@@ -17,35 +17,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/camp_back_ground" />
 
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="126dp"
-        android:layout_height="53dp"
-        android:fontFamily="@font/gkktt851"
-        android:text="player name"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
     <Button
         android:id="@+id/backbutton"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
+        android:layout_width="106dp"
+        android:layout_height="69dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/font"
-        android:text="←戻る"
+        android:text="←"
         android:textColor="#000000"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -181,7 +167,7 @@
         app:layout_constraintVertical_bias="0.625" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/makimono"
         android:layout_width="251dp"
         android:layout_height="186dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -189,11 +175,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143"
+        app:layout_constraintVertical_bias="0.144"
         app:srcCompat="@drawable/makimono1" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/text1"
         android:layout_width="186dp"
         android:layout_height="44dp"
         android:fontFamily="@font/gkktt851"
@@ -210,23 +196,7 @@
         app:layout_constraintVertical_bias="0.145" />
 
     <TextView
-        android:id="@+id/military"
-        android:layout_width="177dp"
-        android:layout_height="70dp"
-        android:fontFamily="sans-serif"
-        android:text="00"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/material_dynamic_neutral30"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215" />
-
-    <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/mannnin"
         android:layout_width="50dp"
         android:layout_height="31dp"
         android:fontFamily="@font/gkktt851"
@@ -239,5 +209,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.302" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="176dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/gkktt851"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.218" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
