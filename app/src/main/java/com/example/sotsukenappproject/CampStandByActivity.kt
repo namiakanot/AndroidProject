@@ -15,7 +15,6 @@ class CampStandByActivity : AppCompatActivity() {
     //カウントダウン処理>>
     inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
-        var isRunning = false
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
@@ -47,10 +46,10 @@ class CampStandByActivity : AppCompatActivity() {
         val largeCampCount = pref.getInt("LCAMP_COUNT",0)
 
         val times = intent.getIntExtra("CampLevel", 0)
+        pref.edit().putInt("SAVE_CAMP_TIME",times)
+            .apply()
         if (times >= 30){
             editor.putInt("LCAMP_COUNT",largeCampCount + 1)
-            pref.edit().putInt("SAVE_CAMP_TIME",times)
-                .apply()
         }
         editor.apply()
 
