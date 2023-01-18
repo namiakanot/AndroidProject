@@ -19,7 +19,7 @@ class LastCheckActivity : AppCompatActivity() {
 
         val userForce = pref.getInt("USER_FORCE",960)
         val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
-        val attackPref = pref.getInt("WON_COUNT",0)
+        val attackPref = pref.getInt("WON_COUNT",6)
         val lostCount = pref.getInt("LOST_COUNT",0)
         val losingCount = pref.getInt("LOSING_COUNT",0)
         val enemyForce = prefForce[attackPref]

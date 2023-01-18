@@ -41,18 +41,18 @@ class CampActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
 
-        var textMessage = findViewById<TextView>(R.id.syotyouword)
-        var small = findViewById<ImageButton>(R.id.small_grow)
-        var middle = findViewById<ImageButton>(R.id.middle_grow)
-        var large = findViewById<ImageButton>(R.id.large_grow)
-        var timerText = findViewById<TextView>(R.id.timer)
+        val textMessage = binding.syotyouword
+        val small = binding.smallGrow
+        val middle = binding.middleGrow
+        val large = binding.largeGrow
+        val timerText = binding.timer
         var growuptimer = 0
 
 
         //  ボタン押したとき
         small.setOnClickListener{
             textMessage.setText(R.string.textsmall)
-            timerText.setText("10:00")
+            timerText.text = "10:00"
             growuptimer = 10
 
 
@@ -75,7 +75,7 @@ class CampActivity : AppCompatActivity() {
 
         middle.setOnClickListener{
             textMessage.setText(R.string.textmiddle)
-            timerText.setText("20:00")
+            timerText.text = "20:00"
             growuptimer = 20
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
@@ -95,7 +95,7 @@ class CampActivity : AppCompatActivity() {
 
         large.setOnClickListener{
             textMessage.setText(R.string.textlarge)
-            timerText.setText("30:00")
+            timerText.text = "30:00"
             growuptimer = 30
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {

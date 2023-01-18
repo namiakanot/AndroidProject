@@ -27,7 +27,7 @@ class AchievementActivity : AppCompatActivity() {
         val editor = pref.edit()
         val userForce = pref.getInt("USER_FORCE", 960)
         val enemyForce = pref.getInt("ENEMY_FORCE", 0)
-        val attackedCounter = pref.getInt("WON_COUNT", 0)
+        val attackedCounter = pref.getInt("WON_COUNT", 6)
         // 未設定
         val largeCampCount = pref.getInt("LCAMP_COUNT", 0)
         val attackTime = pref.getLong("ATTACK_TIME",0).toInt()
