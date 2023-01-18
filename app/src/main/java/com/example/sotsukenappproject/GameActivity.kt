@@ -25,7 +25,6 @@ class GameActivity : AppCompatActivity() {
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val userForce = pref.getInt("USER_FORCE",960)
         binding.military.text = userForce.toString()
-        var tapCount = 0
 
         /* ↓フッターメニュー */
         // 設定ボタン
@@ -59,13 +58,6 @@ class GameActivity : AppCompatActivity() {
         }
         /* ↑進行開始ボタン */
 
-//        binding.cheatButton.setOnClickListener{
-//            tapCount++
-//            if(tapCount == 7){
-//                cheatMode()
-//            }
-//        }
-
     }
 
     override fun onResume() {
@@ -87,14 +79,6 @@ class GameActivity : AppCompatActivity() {
     override fun onPause(){
         super.onPause()
         soundPool.release()
-    }
-    // 検証用 コマンド
-    private fun cheatMode(){
-
-        /**
-         * ???????を7回タップ
-         */
-
     }
 
 }

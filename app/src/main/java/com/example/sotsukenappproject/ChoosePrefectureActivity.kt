@@ -24,7 +24,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
-        val nextPref = pref.getInt("WON_COUNT",6)
+        val nextPref = pref.getInt("WON_COUNT",0)
 
         changeColor(nextPref)
 
