@@ -32,6 +32,21 @@ class CampStandByActivity : AppCompatActivity() {
             fragmentManager.run {
                 dialog.show(this, "")
             }
+            val pref = PreferenceManager.getDefaultSharedPreferences(this@CampStandByActivity)
+            val editor = pref.edit()
+            val userForce = pref.getInt("USER_FORCE",960)
+            val times = intent.getIntExtra("CampLevel", 0)
+            val largeCampCount = pref.getInt("LCAMP_COUNT",0)
+
+            if (times >= 30){
+                editor.putInt("LCAMP_COUNT",largeCampCount + 1)
+                editor.putInt("USER_FORCE",userForce + 120)
+            }else if( (times < 30)&&(times >= 20) ){
+                editor.putInt("USER_FORCE",userForce + 50)
+            }else if(times < 20){
+                editor.putInt("USER_FORCE",userForce + 20)
+            }
+            editor.apply()
 
         }
 
@@ -48,10 +63,6 @@ class CampStandByActivity : AppCompatActivity() {
         val times = intent.getIntExtra("CampLevel", 0)
         pref.edit().putInt("SAVE_CAMP_TIME",times)
             .apply()
-        if (times >= 30){
-            editor.putInt("LCAMP_COUNT",largeCampCount + 1)
-        }
-        editor.apply()
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
