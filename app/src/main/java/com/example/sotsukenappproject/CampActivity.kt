@@ -50,17 +50,16 @@ class CampActivity : AppCompatActivity() {
         val large = binding.largeGrow
         val timerText = binding.timer
         var growuptimer = 0
+        var forceUp = pref.getInt("force_UP",20)
 
 
         //  ボタン押したとき
         small.setOnClickListener{
             textMessage.setText(R.string.textsmall)
-            timerText.setText("10:00")
-            growuptimer = 10                //seekbarで変化させる
             timerText.text = "10:00"
             growuptimer = 10
 
-            val forceUp = pref.getInt("force_UP",20)
+
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
@@ -85,7 +84,6 @@ class CampActivity : AppCompatActivity() {
             timerText.text = "20:00"
             growuptimer = 20
 
-            val forceUp = pref.getInt("force_UP",50)
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
@@ -110,9 +108,7 @@ class CampActivity : AppCompatActivity() {
             timerText.text = "30:00"
             growuptimer = 30
 
-            val forceUp = pref.getInt("force_UP",120)
             val strforce = forceUp.toString()
-            val Intforce = forceUp.toInt()
             binding.forceup.setText(strforce)
 
 
@@ -133,11 +129,9 @@ class CampActivity : AppCompatActivity() {
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
-                intent.putExtra("CampLevel", growuptimer)
+            intent.putExtra("CampLevel", growuptimer)
+            intent.putExtra("force_UP", forceUp)
             startActivity(intent)
-//            val intent2 = Intent(this, CampStandByActivity::class.java)
-//            intent2.putExtra("forceup", Intforce)
-//            startActivity(intent2)
         }
 
     }

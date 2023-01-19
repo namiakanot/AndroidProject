@@ -74,7 +74,7 @@ class LastCheckActivity : AppCompatActivity() {
     /* 情報を表示する(テキスト要素の書き換え) */
     @SuppressLint("SetTextI18n")
     private fun showEnemyStatus(enemyNumber: Int, myForce: Int, enemyForce: Int, attackTime: Long){
-        val prefName: Array<String> = arrayOf("R.string.nara","R.string.mie","R.string.siga","R.string.kyoto","R.string.hyougo","R.string.osaka")
+        val prefName: Array<String> = arrayOf("奈良","三重","滋賀","京都","兵庫","大阪")
         val enemyName = prefName[enemyNumber]
         binding.myarmy.text = "Player"
         binding.enemyName.text = enemyName

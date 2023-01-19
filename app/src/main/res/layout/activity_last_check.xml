@@ -115,6 +115,7 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/gkktt851"
         android:text="10000"
+        android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
