@@ -11,6 +11,45 @@ import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 class CampStandByActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCampStandByBinding
 
+    //カウントダウン処理>>
+    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
+        CountDownTimer(millisInFuture, countDownInterval) {
+
+        val fragmentManager: FragmentManager = supportFragmentManager
+
+        override fun onTick(millisUntilFinished: Long) {
+            val minute = millisUntilFinished / 1000L / 60L
+            val second = millisUntilFinished / 1000L % 60L
+            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
+        }
+
+        override fun onFinish() {
+            binding.standByTimer.text = "0:00"
+
+            //タイマー終了後のポップアップ
+            val dialog = Camp_popFragment()
+            fragmentManager.run {
+                dialog.show(this, "")
+            }
+            val pref = PreferenceManager.getDefaultSharedPreferences(this@CampStandByActivity)
+            val editor = pref.edit()
+            val userForce = pref.getInt("USER_FORCE",960)
+            val times = intent.getIntExtra("CampLevel", 0)
+            val largeCampCount = pref.getInt("LCAMP_COUNT",0)
+
+            if (times >= 30){
+                editor.putInt("LCAMP_COUNT",largeCampCount + 1)
+                editor.putInt("USER_FORCE",userForce + 120)
+            }else if( (times < 30)&&(times >= 20) ){
+                editor.putInt("USER_FORCE",userForce + 50)
+            }else if(times < 20){
+                editor.putInt("USER_FORCE",userForce + 20)
+            }
+            editor.apply()
+
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
@@ -33,10 +72,8 @@ class CampStandByActivity : AppCompatActivity() {
         val largeCampCount = pref.getInt("LCAMP_COUNT",0)
 
         val times = intent.getIntExtra("CampLevel", 0)
-        if (times == 30){
-            editor.putInt("LCAMP_COUNT",largeCampCount + 1)
-        }
-        editor.apply()
+        pref.edit().putInt("SAVE_CAMP_TIME",times)
+            .apply()
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
@@ -53,7 +90,7 @@ class CampStandByActivity : AppCompatActivity() {
 
         binding.timerStop.setOnClickListener {
             //途中終了時のポップアップ
-            val dialog = checkpopFragment()
+            val dialog = CheckPopFragment()
             fragmentManager.run {
                 dialog.show(this, "")
             }
@@ -66,29 +103,29 @@ class CampStandByActivity : AppCompatActivity() {
     }
 
     //カウントダウン処理>>
-    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
-        CountDownTimer(millisInFuture, countDownInterval) {
-        var isRunning = false
-
-        val fragmentManager: FragmentManager = supportFragmentManager
-
-        override fun onTick(millisUntilFinished: Long) {
-            val minute = millisUntilFinished / 1000L / 60L
-            val second = millisUntilFinished / 1000L % 60L
-            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
-        }
-
-        override fun onFinish(){
-            binding.standByTimer.text = "0:00"
-            //タイマー終了後のポップアップ
-            val dialog = Camp_popFragment()
-            fragmentManager.run {
-                dialog.show(this, "")
-            }
-
-        }
-
-    }
+//    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
+//        CountDownTimer(millisInFuture, countDownInterval) {
+//        var isRunning = false
+//
+//        val fragmentManager: FragmentManager = supportFragmentManager
+//
+//        override fun onTick(millisUntilFinished: Long) {
+//            val minute = millisUntilFinished / 1000L / 60L
+//            val second = millisUntilFinished / 1000L % 60L
+//            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
+//        }
+//
+//        override fun onFinish(){
+//            binding.standByTimer.text = "0:00"
+//            //タイマー終了後のポップアップ
+//            val dialog = Camp_popFragment()
+//            fragmentManager.run {
+//                dialog.show(this, "")
+//            }
+//
+//        }
+//
+//    }
 
 }
 

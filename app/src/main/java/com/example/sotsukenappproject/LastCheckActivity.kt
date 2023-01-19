@@ -43,6 +43,7 @@ class LastCheckActivity : AppCompatActivity() {
         binding.startAttackButton.setOnClickListener{
             val intent = Intent(this, AttackCountDownActivity::class.java)
             intent.putExtra("ATTACK_TIME",attackTime)
+            pref.edit().putLong("ATTACK_TIME",attackTime).apply()
             startActivity(intent)
         }
     }

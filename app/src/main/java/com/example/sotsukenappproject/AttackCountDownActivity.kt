@@ -38,10 +38,13 @@ class AttackCountDownActivity : AppCompatActivity() {
             val pref = PreferenceManager.getDefaultSharedPreferences(this@AttackCountDownActivity)
             val userForce = pref.getInt("USER_FORCE",960)
             val wonCount = pref.getInt("WON_COUNT", 0)
+            var lostCount = pref.getInt("LOST_COUNT",0)
+            lostCount += 1
             val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
 
             pref.edit().putInt("USER_FORCE", (userForce + prefForce[wonCount] * 0.3).toInt())
                 .putInt("WON_COUNT",wonCount + 1)
+                .putInt("LOSING_COUNT",lostCount - 1)
                 .apply()
         }
     }
@@ -58,7 +61,7 @@ class AttackCountDownActivity : AppCompatActivity() {
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
         val second: Long = times / 1000L % 60L
-        binding.standByTimer.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
+        binding.standByTimer.text = "%1$001d:%2$02d:%3$02d".format(hour, minute, second)
 
         val timer = CampTimer((times * 60 * 1000).toLong(), 1000)
 

@@ -21,12 +21,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+        var tapCount = 0
 
         binding.reserbutton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
 
+        /**
+         * どこかに透明のcheatButton作る
+         */
+        binding.cheatButton.setOnClickListener{
+            tapCount++
+            if(tapCount >= 7){
+                binding.reserbutton.setOnClickListener{
+                    startActivity(Intent(this,CheatModeActivity::class.java))
+                    tapCount = 0
+                }
+            }
+        }
 
         player = MediaPlayer.create(this, R.raw.sora)
         player.isLooping = true

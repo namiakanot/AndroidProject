@@ -27,7 +27,15 @@ class CampActivity : AppCompatActivity() {
         val userForce = pref.getInt("USER_FORCE",960)
 
         binding.military1.text = userForce.toString()
+        val campFailedFlag = intent.getBooleanExtra("CAMP_FAILED_FLAG",false)
+        val largeCampCount = pref.getInt("LCAMP_COUNT",0)
+        val saveCampTime = pref.getInt("SAVE_CAMP_TIME",0)
+        if( campFailedFlag && (saveCampTime >= 30) ){
+            pref.edit().putInt("LCAMP_COUNT",largeCampCount - 1)
+                .apply()
+        }
 
+        binding.military1.text = userForce.toString()
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
         binding.backbutton.setOnClickListener {
@@ -36,11 +44,11 @@ class CampActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
 
-        var textMessage = findViewById<TextView>(R.id.syotyouword)
-        var small = findViewById<ImageButton>(R.id.small_grow)
-        var middle = findViewById<ImageButton>(R.id.middle_grow)
-        var large = findViewById<ImageButton>(R.id.large_grow)
-        var timerText = findViewById<TextView>(R.id.timer)
+        val textMessage = binding.syotyouword
+        val small = binding.smallGrow
+        val middle = binding.middleGrow
+        val large = binding.largeGrow
+        val timerText = binding.timer
         var growuptimer = 0
 
 
@@ -49,6 +57,8 @@ class CampActivity : AppCompatActivity() {
             textMessage.setText(R.string.textsmall)
             timerText.setText("10:00")
             growuptimer = 10                //seekbarで変化させる
+            timerText.text = "10:00"
+            growuptimer = 10
 
             val forceUp = pref.getInt("force_UP",20)
             var strforce = forceUp.toString()
@@ -72,7 +82,7 @@ class CampActivity : AppCompatActivity() {
 
         middle.setOnClickListener{
             textMessage.setText(R.string.textmiddle)
-            timerText.setText("20:00")
+            timerText.text = "20:00"
             growuptimer = 20
 
             val forceUp = pref.getInt("force_UP",50)
@@ -97,7 +107,7 @@ class CampActivity : AppCompatActivity() {
 
         large.setOnClickListener{
             textMessage.setText(R.string.textlarge)
-            timerText.setText("30:00")
+            timerText.text = "30:00"
             growuptimer = 30
 
             val forceUp = pref.getInt("force_UP",120)
