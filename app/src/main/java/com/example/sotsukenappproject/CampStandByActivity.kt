@@ -58,13 +58,12 @@ class CampStandByActivity : AppCompatActivity() {
 
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
-        //外にもっていく数値
+
         val userForce = pref.getInt("USER_FORCE",960)       //兵力
         val campCount = pref.getInt("camp_COUNT",0)         //総育成回数
         val totalCampTime = pref.getInt("total_CAMPTIME",0) //総育成時間
         val forceUp = intent.getIntExtra("force_UP",20)       //上昇値
 
-        //Activity内で完結する数値
         val oldUserForce: String = userForce.toString()
         val newUserForce = userForce + forceUp
 
