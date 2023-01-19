@@ -23,16 +23,14 @@ class LastCheckActivity : AppCompatActivity() {
         val lostCount = pref.getInt("LOST_COUNT",0)
         val losingCount = pref.getInt("LOSING_COUNT",0)
         val enemyForce = prefForce[attackPref]
-        val penaltyPoint = 0.1 * lostCount // 進行失敗ペナルティ
 
-        val factUserForce = userForce * (1 - penaltyPoint)
         val factEnemyForce = enemyForce * (1 + (0.1 * (lostCount - losingCount)))
 
         // 進行時間
-        val attackTime: Long = calcAttackTime(factUserForce.toInt(), factEnemyForce.toInt()).toLong()
+        val attackTime: Long = calcAttackTime(userForce, factEnemyForce.toInt()).toLong()
 
         // 自国と敵国の兵力と所要時間を表示する
-        showEnemyStatus(attackPref, factUserForce.toInt(), factEnemyForce.toInt(), attackTime)
+        showEnemyStatus(attackPref, userForce, factEnemyForce.toInt(), attackTime)
 
         // 戻るボタン(進行先選択)
         binding.backButton.setOnClickListener{

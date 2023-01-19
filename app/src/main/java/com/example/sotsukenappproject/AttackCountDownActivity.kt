@@ -40,11 +40,13 @@ class AttackCountDownActivity : AppCompatActivity() {
             val wonCount = pref.getInt("WON_COUNT", 0)
             var lostCount = pref.getInt("LOST_COUNT",0)
             lostCount += 1
+            var losingCount = pref.getInt("LOSING_COUNT",0)
+            losingCount += 1
             val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
 
             pref.edit().putInt("USER_FORCE", (userForce + prefForce[wonCount] * 0.3).toInt())
                 .putInt("WON_COUNT",wonCount + 1)
-                .putInt("LOSING_COUNT",lostCount - 1)
+                .putInt("LOSING_COUNT",0)
                 .apply()
         }
     }
@@ -56,7 +58,8 @@ class AttackCountDownActivity : AppCompatActivity() {
         /* 内容未確定 */
         binding = ActivityAttackCountDownBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val userForce = pref.getInt("USER_FORCE",960)
         val times = intent.getIntExtra("ATTACK_TIME",0)
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
@@ -70,6 +73,12 @@ class AttackCountDownActivity : AppCompatActivity() {
         }
         binding.timerStop.setOnClickListener {
             timer.cancel()
+            var lostCount = pref.getInt("LOST_COUNT",0)
+            lostCount += 1
+            var losingCount = pref.getInt("LOSING_COUNT",0)
+            losingCount += 1
+            pref.edit().putInt("USER_FORCE",userForce * (1 - (0.1 * lostCount)).toInt() )
+                .apply()
         }
     }
 }
