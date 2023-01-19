@@ -1,5 +1,6 @@
 package com.example.sotsukenappproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import com.example.sotsukenappproject.databinding.ActivityCheatModeBinding
 
 class CheatModeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheatModeBinding
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCheatModeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -37,21 +39,21 @@ class CheatModeActivity : AppCompatActivity() {
         /**
          * 現状の一覧を表示させる
          */
-        binding.userForce.text = userForce.toString()
-        binding.wonCount.text = wonCount.toString()
-        binding.lostCount.text = lostCount.toString()
-        binding.losingCount.text = losingCount.toString()
-        binding.largeCampCount.text = largeCampCount.toString()
+        binding.userForce.text = "現在の兵力:$userForce"
+        binding.wonCount.text = "現在の進行成功数:$wonCount"
+        binding.lostCount.text = "現在の進行失敗数:$lostCount"
+        binding.losingCount.text = "現在の連続進行失敗数:$losingCount"
+        binding.largeCampCount.text = "現在の大育成成功数:$largeCampCount"
 
         /**
          * 変更ボタンを押すとそれぞれにEditTextを追加し、その値を読み取る
          */
         binding.editDataButton.setOnClickListener() {
-            val edtUserForce: Int = binding.editUserForce.text.toInt()
-            val edtWonCount: Int = binding.editWonCount.text.toInt()
-            val edtLostCount: Int = binding.editLostCount.text.toInt()
-            val edtLosingCount: Int = binding.editLosingCount.text.toInt()
-            val edtLcampCount: Int = binding.editLcampCount.text.toInt()
+            val edtUserForce: Int = binding.editUserForce.text.toString().toInt()
+            val edtWonCount: Int = binding.editWonCount.text.toString().toInt()
+            val edtLostCount: Int = binding.editLostCount.text.toString().toInt()
+            val edtLosingCount: Int = binding.editLosingCount.text.toString().toInt()
+            val edtLcampCount: Int = binding.editLcampCount.text.toString().toInt()
 
             editor.putInt("USER_FORCE", edtUserForce)
                .putInt("WON_COUNT", edtWonCount)
@@ -84,6 +86,10 @@ class CheatModeActivity : AppCompatActivity() {
                 .putInt("CHEAT_COUNT",0)
                 .apply()
 
+            startActivity(Intent(this,MainActivity::class.java))
+        }
+
+        binding.backButton3.setOnClickListener(){
             startActivity(Intent(this,MainActivity::class.java))
         }
 

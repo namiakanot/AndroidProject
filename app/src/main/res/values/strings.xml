@@ -24,4 +24,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username">"DataStore"</string>
     <string name="大阪">osaka</string>
+    <string name="userForce">ユーザの兵力</string>
+    <string name="wonCount">進行成功数</string>
+    <string name="lostCount">進行失敗回数</string>
+    <string name="losingCount">連続進行失敗数</string>
+    <string name="LcampCount">大育成成功回数</string>
 </resources>
