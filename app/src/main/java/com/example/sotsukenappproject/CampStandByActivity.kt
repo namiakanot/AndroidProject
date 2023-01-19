@@ -11,38 +11,24 @@ import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 class CampStandByActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCampStandByBinding
 
-
-    //カウントダウン処理>>
-    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
-        CountDownTimer(millisInFuture, countDownInterval) {
-        var isRunning = false
-
-        val fragmentManager: FragmentManager = supportFragmentManager
-
-        override fun onTick(millisUntilFinished: Long) {
-            val minute = millisUntilFinished / 1000L / 60L
-            val second = millisUntilFinished / 1000L % 60L
-            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
-        }
-
-        override fun onFinish() {
-            binding.standByTimer.text = "0:00"
-
-            //タイマー終了後のポップアップ
-            val dialog = Camp_popFragment()
-            fragmentManager.run {
-                dialog.show(this, "")
-            }
-
-        }
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
+
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
+
+        //外にもっていく数値
+        val userForce = pref.getInt("USER_FORCE",960)       //兵力
+        val campCount = pref.getInt("camp_COUNT",0)         //総育成回数
+        val totalCampTime = pref.getInt("total_CAMPTIME",0) //総育成時間
+        val forceUp = intent.getIntExtra("force_UP",20)       //上昇値
+
+        //Activity内で完結する数値
+        val oldUserForce: String = userForce.toString()
+        val newUserForce = userForce + forceUp
+
         val editor = pref.edit()
         val largeCampCount = pref.getInt("LCAMP_COUNT",0)
 
@@ -53,6 +39,9 @@ class CampStandByActivity : AppCompatActivity() {
         editor.apply()
 
         val fragmentManager: FragmentManager = supportFragmentManager
+
+        val strforce = forceUp.toString()
+        binding.textView32.setText(strforce) //テスト用
 
         binding.standByTimer.text = "${times}：00"
         val timer = CampTimer((times * 60 * 1000).toLong(), 100)
@@ -74,7 +63,31 @@ class CampStandByActivity : AppCompatActivity() {
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
         startActivity(Intent(this, GameActivity::class.java))
-//        Toast.makeText(getApplicationContext(), "Good bye!" , Toast.LENGTH_SHORT).show();
+    }
+
+    //カウントダウン処理>>
+    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
+        CountDownTimer(millisInFuture, countDownInterval) {
+        var isRunning = false
+
+        val fragmentManager: FragmentManager = supportFragmentManager
+
+        override fun onTick(millisUntilFinished: Long) {
+            val minute = millisUntilFinished / 1000L / 60L
+            val second = millisUntilFinished / 1000L % 60L
+            binding.standByTimer.text = "%1d:%2$02d".format(minute, second)
+        }
+
+        override fun onFinish(){
+            binding.standByTimer.text = "0:00"
+            //タイマー終了後のポップアップ
+            val dialog = Camp_popFragment()
+            fragmentManager.run {
+                dialog.show(this, "")
+            }
+
+        }
+
     }
 
 }

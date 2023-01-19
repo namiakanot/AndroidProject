@@ -23,7 +23,9 @@ class CampActivity : AppCompatActivity() {
         setContentView(view)
 
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
+
         val userForce = pref.getInt("USER_FORCE",960)
+
         binding.military1.text = userForce.toString()
 
 
@@ -46,8 +48,11 @@ class CampActivity : AppCompatActivity() {
         small.setOnClickListener{
             textMessage.setText(R.string.textsmall)
             timerText.setText("10:00")
-            growuptimer = 10
+            growuptimer = 10                //seekbarで変化させる
 
+            val forceUp = pref.getInt("force_UP",20)
+            var strforce = forceUp.toString()
+            binding.forceup.setText(strforce)
 
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
@@ -58,7 +63,6 @@ class CampActivity : AppCompatActivity() {
 
 
                     override fun onStartTrackingTouch(volume_bar: SeekBar) {
-                        soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
                     }
                     override fun onStopTrackingTouch(volume_bar: SeekBar) {
                     }
@@ -70,6 +74,11 @@ class CampActivity : AppCompatActivity() {
             textMessage.setText(R.string.textmiddle)
             timerText.setText("20:00")
             growuptimer = 20
+
+            val forceUp = pref.getInt("force_UP",50)
+            var strforce = forceUp.toString()
+            binding.forceup.setText(strforce)
+
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
@@ -90,14 +99,18 @@ class CampActivity : AppCompatActivity() {
             textMessage.setText(R.string.textlarge)
             timerText.setText("30:00")
             growuptimer = 30
+
+            val forceUp = pref.getInt("force_UP",120)
+            val strforce = forceUp.toString()
+            binding.forceup.setText(strforce)
+
+
             binding.growbar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
                         growbar: SeekBar, progress: Int, fromUser: Boolean) {
                         val str: String = getString(R.string.percentage, progress)
-
                     }
-
                     override fun onStartTrackingTouch(volume_bar: SeekBar) {
                         soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
                     }
@@ -109,12 +122,9 @@ class CampActivity : AppCompatActivity() {
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
-
+                intent.putExtra("CampLevel", growuptimer)
             //タイマーの情報
-            intent.putExtra("CampLevel",growuptimer)
-
             startActivity(intent)
-
         }
 
     }
