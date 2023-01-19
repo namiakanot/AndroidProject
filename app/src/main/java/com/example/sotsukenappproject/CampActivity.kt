@@ -112,6 +112,7 @@ class CampActivity : AppCompatActivity() {
 
             val forceUp = pref.getInt("force_UP",120)
             val strforce = forceUp.toString()
+            val Intforce = forceUp.toInt()
             binding.forceup.setText(strforce)
 
 
@@ -133,8 +134,10 @@ class CampActivity : AppCompatActivity() {
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
                 intent.putExtra("CampLevel", growuptimer)
-            //タイマーの情報
             startActivity(intent)
+//            val intent2 = Intent(this, CampStandByActivity::class.java)
+//            intent2.putExtra("forceup", Intforce)
+//            startActivity(intent2)
         }
 
     }

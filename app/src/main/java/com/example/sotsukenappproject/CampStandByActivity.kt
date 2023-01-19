@@ -64,12 +64,6 @@ class CampStandByActivity : AppCompatActivity() {
         val totalCampTime = pref.getInt("total_CAMPTIME",0) //総育成時間
         val forceUp = intent.getIntExtra("force_UP",20)       //上昇値
 
-        val oldUserForce: String = userForce.toString()
-        val newUserForce = userForce + forceUp
-
-        val editor = pref.edit()
-        val largeCampCount = pref.getInt("LCAMP_COUNT",0)
-
         val times = intent.getIntExtra("CampLevel", 0)
         pref.edit().putInt("SAVE_CAMP_TIME",times)
             .apply()
