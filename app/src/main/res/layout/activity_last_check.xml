@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/main_background" />
 
     <ImageButton
-        android:id="@+id/backButton3"
+        android:id="@+id/backButton"
         android:layout_width="238dp"
         android:layout_height="112dp"
         android:backgroundTint="@color/none"

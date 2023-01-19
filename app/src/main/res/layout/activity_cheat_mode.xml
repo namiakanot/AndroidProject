@@ -120,17 +120,6 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="640dp" />
 
-    <Button
-        android:id="@+id/backButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="戻る"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/resetButton"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="640dp" />
-
     <TextView
         android:id="@+id/wonCount"
         android:layout_width="wrap_content"
@@ -174,5 +163,16 @@
         app:layout_constraintTop_toBottomOf="@+id/editLosingCount"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="135dp" />
+
+    <Button
+        android:id="@+id/backButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="戻る"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/resetButton"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="637dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
