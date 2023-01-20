@@ -50,7 +50,7 @@ class CampActivity : AppCompatActivity() {
         val large = binding.largeGrow
         val timerText = binding.timer
         var growuptimer = 0
-        var forceUp = pref.getInt("force_UP",20)
+        var forceUp:Int
 
 
         //  ボタン押したとき
@@ -59,7 +59,8 @@ class CampActivity : AppCompatActivity() {
             timerText.text = "10:00"
             growuptimer = 10
 
-
+            pref.edit().putInt("force_UP",20).apply()
+            forceUp = 20
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
@@ -84,6 +85,8 @@ class CampActivity : AppCompatActivity() {
             timerText.text = "20:00"
             growuptimer = 20
 
+            pref.edit().putInt("force_UP",50).apply()
+            forceUp = 50
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
@@ -108,6 +111,8 @@ class CampActivity : AppCompatActivity() {
             timerText.text = "30:00"
             growuptimer = 30
 
+            pref.edit().putInt("force_UP",120).apply()
+            forceUp = 120
             val strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
@@ -131,7 +136,6 @@ class CampActivity : AppCompatActivity() {
             val intent = Intent(this, CampStandByActivity::class.java)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             intent.putExtra("CampLevel", growuptimer)
-            intent.putExtra("force_UP", forceUp)
             startActivity(intent)
         }
 

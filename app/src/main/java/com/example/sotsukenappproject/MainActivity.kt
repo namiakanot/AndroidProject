@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
          */
         binding.cheatButton.setOnClickListener{
             tapCount++
-            if(tapCount >= 7){
-                binding.textView23.text = "てすと設定"
+            if(tapCount >= 4){
+                binding.textView23.text = "てすと"
                 binding.reserbutton.setOnClickListener{
                     startActivity(Intent(this,CheatModeActivity::class.java))
                     tapCount = 0
