@@ -64,7 +64,7 @@ class AttackCountDownActivity : AppCompatActivity() {
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
         val second: Long = times / 1000L % 60L
-        binding.standByTimer.text = "%1$001d:%2$02d:%3$02d".format(hour, minute, second)
+        binding.standByTimer.text = "%1d:%2$02d:%3$02d".format(hour, minute, second)
 
         val timer = CampTimer((times * 60 * 1000).toLong(), 1000)
 
