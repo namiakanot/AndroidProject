@@ -44,6 +44,19 @@ class AttackCountDownActivity : AppCompatActivity() {
             losingCount += 1
             val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
 
+            var i = 0
+            if(lostCount > losingCount){
+                while (i < lostCount - losingCount){
+                    prefForce[wonCount] *= 1.1.toInt()
+                    i++
+                }
+            }else if(losingCount > lostCount){
+                while (i < losingCount - lostCount){
+                    prefForce[wonCount] *= 0.9.toInt()
+                    i++
+                }
+            }
+
             pref.edit().putInt("USER_FORCE", (userForce + prefForce[wonCount] * 0.3).toInt())
                 .putInt("WON_COUNT",wonCount + 1)
                 .putInt("LOSING_COUNT",0)
