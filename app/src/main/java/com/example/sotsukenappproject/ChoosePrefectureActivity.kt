@@ -32,12 +32,14 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         binding.backbutton2.setOnClickListener{
             val intent = Intent( this, GameActivity::class.java )
             startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
 
         //LastCheck遷移
         binding.attackbutton2.setOnClickListener {
             val intent = Intent(this, LastCheckActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
 
         val attackken = binding.enemie

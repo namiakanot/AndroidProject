@@ -14,11 +14,35 @@ class AttackCountDownActivity : AppCompatActivity() {
     var dialog = Attack_popFragment()
     val fragmentManager: FragmentManager = supportFragmentManager
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAttackCountDownBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+//        setContentView(binding.root)
 
+        val times = intent.getIntExtra("ATTACK_TIME",0)
+        val hour: Long = times / 1000L / 60L / 60L
+        val minute: Long = times / 1000L / 60L % 60L
+        val second: Long = times / 1000L % 60L
+        binding.standByTimer.text = "%1$001d:%2$02d:%3$02d".format(hour, minute, second)
 
+        val timer = AttackTimer((times * 60 * 1000).toLong(), 1000)
+
+        binding.timerStart.setOnClickListener {
+            timer.start()
+        }
+        binding.timerStop.setOnClickListener {
+            val dialog = checkpopFragment2()
+            fragmentManager.run {
+                dialog.show(this, "")
+            }
+        }
+    }
     //カウントダウン処理>>
-    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
+    inner class AttackTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
+        var isRunning = false
 
         var dialog = Attack_popFragment()
 
@@ -49,27 +73,4 @@ class AttackCountDownActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val view = binding.root
-        setContentView(view)
-        /* 内容未確定 */
-        binding = ActivityAttackCountDownBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val times = intent.getIntExtra("ATTACK_TIME",0)
-        val hour: Long = times / 1000L / 60L / 60L
-        val minute: Long = times / 1000L / 60L % 60L
-        val second: Long = times / 1000L % 60L
-        binding.standByTimer.text = "%1$001d:%2$02d:%3$02d".format(hour, minute, second)
-
-        val timer = CampTimer((times * 60 * 1000).toLong(), 1000)
-
-        binding.timerStart.setOnClickListener {
-            timer.start()
-        }
-        binding.timerStop.setOnClickListener {
-            timer.cancel()
-        }
-    }
 }

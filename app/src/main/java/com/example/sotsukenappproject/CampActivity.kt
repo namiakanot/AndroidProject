@@ -129,6 +129,7 @@ class CampActivity : AppCompatActivity() {
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
             val intent = Intent(this, CampStandByActivity::class.java)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             intent.putExtra("CampLevel", growuptimer)
             intent.putExtra("force_UP", forceUp)
             startActivity(intent)
