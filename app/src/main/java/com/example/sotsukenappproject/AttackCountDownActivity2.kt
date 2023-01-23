@@ -6,8 +6,9 @@ import android.animation.AnimatorSet
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.VideoView
+import androidx.core.os.HandlerCompat.postDelayed
 import androidx.fragment.app.FragmentManager
-import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityAttackCountDown2Binding
 
 
@@ -22,8 +23,8 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         binding = ActivityAttackCountDown2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-//        setContentView(binding.root)
 
+        //45は発表用
         val times = intent.getLongExtra("ATTACK_TIME",0)
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
@@ -42,6 +43,8 @@ class AttackCountDownActivity2 : AppCompatActivity() {
             }
         }
     }
+
+
     //カウントダウン処理>>
     inner class AttackTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
@@ -49,6 +52,8 @@ class AttackCountDownActivity2 : AppCompatActivity() {
 
         var dialog = Attack_popFragment()
         val fragmentManager: FragmentManager = supportFragmentManager
+
+
 
         override fun onTick(millisUntilFinished: Long) {
             val hour = millisUntilFinished / 1000L / 60L / 60L
@@ -60,20 +65,7 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
 
-            fragmentManager.run{
-                dialog.show(this,"")
-            }
-            val pref = PreferenceManager.getDefaultSharedPreferences(this@AttackCountDownActivity2)
-            val userForce = pref.getInt("USER_FORCE",960)
-            val wonCount = pref.getInt("WON_COUNT", 0)
-            var lostCount = pref.getInt("LOST_COUNT",0)
-            lostCount += 1
-            val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
 
-            pref.edit().putInt("USER_FORCE", (userForce + prefForce[wonCount] * 0.3).toInt())
-                .putInt("WON_COUNT",wonCount + 1)
-                .putInt("LOSING_COUNT",lostCount - 1)
-                .apply()
 
         }
     }
