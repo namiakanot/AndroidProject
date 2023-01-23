@@ -1,5 +1,6 @@
 package com.example.sotsukenappproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -24,7 +25,9 @@ class GameActivity : AppCompatActivity() {
 
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val userForce = pref.getInt("USER_FORCE",960)
+        val wonCount = pref.getInt("WON_COUNT",0)
         binding.military.text = userForce.toString()
+        changeColor(wonCount)
 
         /* ↓フッターメニュー */
         // 設定ボタン
@@ -79,6 +82,48 @@ class GameActivity : AppCompatActivity() {
     override fun onPause(){
         super.onPause()
         soundPool.release()
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun changeColor(nextPref: Int) {
+        when (nextPref) {
+            0 -> {
+
+            }
+            1 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+            }
+            2 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_blue)
+            }
+            3 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_blue)
+                binding.siga.setImageResource(R.drawable.siga_blue)
+            }
+            4 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_blue)
+                binding.siga.setImageResource(R.drawable.siga_blue)
+                binding.kyoto.setImageResource(R.drawable.kyouto_blue)
+            }
+            5 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_blue)
+                binding.siga.setImageResource(R.drawable.siga_blue)
+                binding.kyoto.setImageResource(R.drawable.kyouto_blue)
+                binding.hyogo.setImageResource(R.drawable.hyougo_blue)
+            }
+            6 -> {
+                binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_blue)
+                binding.siga.setImageResource(R.drawable.siga_blue)
+                binding.kyoto.setImageResource(R.drawable.kyouto_blue)
+                binding.hyogo.setImageResource(R.drawable.hyougo_blue)
+                binding.osaka.setImageResource(R.drawable.oosaka_blue)
+            }
+        }
     }
 
 }

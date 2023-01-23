@@ -138,8 +138,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
                 binding.sigaBt.setTextColor(R.color.light_blue_600)
                 binding.kyotoBt.setTextColor(R.color.light_blue_600)
                 binding.hyougoBt.setTextColor(R.color.light_blue_600)
-                binding.naraBt.setTextColor(R.color.light_blue_600)
-                binding.mieBt.setTextColor(R.color.black)
+                binding.osakaBt.setTextColor(R.color.light_blue_600)
             }
         }
     }

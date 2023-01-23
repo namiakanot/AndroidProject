@@ -98,7 +98,6 @@
         android:layout_height="250dp"
         android:layout_marginEnd="184dp"
         android:src="@drawable/hyougo"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -106,14 +105,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218"
-        app:srcCompat="@drawable/hyougo" />
+        app:srcCompat="@drawable/hyougo"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/osaka"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:src="@drawable/oosaka"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -121,7 +120,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.372"
-        app:srcCompat="@drawable/oosaka" />
+        app:srcCompat="@drawable/oosaka"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/kyoto"
@@ -129,7 +129,6 @@
         android:layout_height="185dp"
         android:scaleType="fitXY"
         android:src="@drawable/kyouto"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +136,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15"
-        app:srcCompat="@drawable/kyouto" />
+        app:srcCompat="@drawable/kyouto"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/siga"
@@ -145,7 +145,6 @@
         android:layout_height="170dp"
         android:scaleType="fitXY"
         android:src="@drawable/siga"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +152,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.172"
-        app:srcCompat="@drawable/siga" />
+        app:srcCompat="@drawable/siga"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/mie"
@@ -162,13 +162,13 @@
         android:layout_marginStart="196dp"
         android:scaleType="fitXY"
         android:src="@drawable/mie"
-        android:tint="@color/red2"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.409"
-        app:srcCompat="@drawable/mie" />
+        app:srcCompat="@drawable/mie"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/nara"
@@ -176,7 +176,6 @@
         android:layout_height="170dp"
         android:scaleType="fitXY"
         android:src="@drawable/nara"
-        android:tint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +183,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/nara" />
+        app:srcCompat="@drawable/nara"
+        app:tint="@color/red2" />
 
     <ImageView
         android:id="@+id/wakayama"
@@ -192,7 +192,6 @@
         android:layout_height="160dp"
         android:scaleType="fitXY"
         android:src="@drawable/wakayama"
-        android:tint="@color/light_blue_A400"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -200,7 +199,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.607"
-        app:srcCompat="@drawable/wakayama" />
+        app:srcCompat="@drawable/wakayama"
+        app:tint="@color/light_blue_A400" />
 
     <ImageButton
         android:id="@+id/attackbutton"
