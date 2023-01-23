@@ -182,9 +182,8 @@
         app:layout_constraintHorizontal_bias="0.665"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/nara"
-        app:tint="@color/red2" />
+        app:layout_constraintVertical_bias="0.493"
+        app:srcCompat="@drawable/nara" />
 
     <ImageView
         android:id="@+id/wakayama"
@@ -221,9 +220,12 @@
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/hkkaing"
         android:lineSpacingExtra="34sp"
-        android:text="現在の兵力"
+        android:text="いまのへいりょく"
+        android:textColor="@color/material_dynamic_neutral10"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
@@ -235,6 +237,7 @@
         android:id="@+id/military"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/gkktt851"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="24sp"

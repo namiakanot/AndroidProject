@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/none"
     tools:context=".checkpopFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,7 +86,10 @@
             android:id="@+id/yesbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:fontFamily="@font/gkktt851"
             android:text="はい"
+            android:textColor="@color/red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/nobutton"
             app:layout_constraintHorizontal_bias="0.543"
@@ -99,6 +101,8 @@
             android:id="@+id/nobutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:fontFamily="@font/gkktt851"
             android:text="いいえ"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

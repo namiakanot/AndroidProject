@@ -35,6 +35,11 @@ class SettingActivity : AppCompatActivity() {
             soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
         }
 
+        binding.title1.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.playerName.setOnClickListener {
             soundPool.play(soundResId2,1.0f,100f,0,0,1.0f)
         }

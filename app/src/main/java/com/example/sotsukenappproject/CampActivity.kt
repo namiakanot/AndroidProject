@@ -64,20 +64,20 @@ class CampActivity : AppCompatActivity() {
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
-            binding.growbar.setOnSeekBarChangeListener(
-                object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(
-                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
-                        val str: String = getString(R.string.percentage, progress)
-                    }
-
-
-                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
-                    }
-                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
-                    }
-                }
-            )
+//            binding.growbar.setOnSeekBarChangeListener(
+//                object : SeekBar.OnSeekBarChangeListener {
+//                    override fun onProgressChanged(
+//                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
+//                        val str: String = getString(R.string.percentage, progress)
+//                    }
+//
+//
+//                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
+//                    }
+//                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
+//                    }
+//                }
+//            )
         }
 
         middle.setOnClickListener{
@@ -90,20 +90,20 @@ class CampActivity : AppCompatActivity() {
             var strforce = forceUp.toString()
             binding.forceup.setText(strforce)
 
-            binding.growbar.setOnSeekBarChangeListener(
-                object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(
-                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
-                        val str: String = getString(R.string.percentage, progress)
-                    }
-
-                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
-                        soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
-                    }
-                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
-                    }
-                }
-            )
+//            binding.growbar.setOnSeekBarChangeListener(
+//                object : SeekBar.OnSeekBarChangeListener {
+//                    override fun onProgressChanged(
+//                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
+//                        val str: String = getString(R.string.percentage, progress)
+//                    }
+//
+//                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
+//                        soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
+//                    }
+//                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
+//                    }
+//                }
+//            )
         }
 
         large.setOnClickListener{
@@ -117,19 +117,19 @@ class CampActivity : AppCompatActivity() {
             binding.forceup.setText(strforce)
 
 
-            binding.growbar.setOnSeekBarChangeListener(
-                object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(
-                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
-                        val str: String = getString(R.string.percentage, progress)
-                    }
-                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
-                        soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
-                    }
-                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
-                    }
-                }
-            )
+//            binding.growbar.setOnSeekBarChangeListener(
+//                object : SeekBar.OnSeekBarChangeListener {
+//                    override fun onProgressChanged(
+//                        growbar: SeekBar, progress: Int, fromUser: Boolean) {
+//                        val str: String = getString(R.string.percentage, progress)
+//                    }
+//                    override fun onStartTrackingTouch(volume_bar: SeekBar) {
+//                        soundPool.play(soundResgr, 1.0f, 100f, 0, 0, 1.0f)
+//                    }
+//                    override fun onStopTrackingTouch(volume_bar: SeekBar) {
+//                    }
+//                }
+//            )
         }
         //育成開始ボタン　
         binding.growbutton.setOnClickListener {
