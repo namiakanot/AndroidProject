@@ -88,25 +88,29 @@ class GameActivity : AppCompatActivity() {
     private fun changeColor(nextPref: Int) {
         when (nextPref) {
             0 -> {
-
+                binding.nara.setImageResource(R.drawable.nara_gray)
             }
             1 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)
+                binding.mie.setImageResource(R.drawable.mie_gray)
             }
             2 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)
                 binding.mie.setImageResource(R.drawable.mie_blue)
+                binding.siga.setImageResource(R.drawable.siga_gray)
             }
             3 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)
                 binding.mie.setImageResource(R.drawable.mie_blue)
                 binding.siga.setImageResource(R.drawable.siga_blue)
+                binding.kyoto.setImageResource(R.drawable.kyouto_gray)
             }
             4 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)
                 binding.mie.setImageResource(R.drawable.mie_blue)
                 binding.siga.setImageResource(R.drawable.siga_blue)
                 binding.kyoto.setImageResource(R.drawable.kyouto_blue)
+                binding.hyogo.setImageResource(R.drawable.hyougo_gray)
             }
             5 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)
@@ -114,6 +118,7 @@ class GameActivity : AppCompatActivity() {
                 binding.siga.setImageResource(R.drawable.siga_blue)
                 binding.kyoto.setImageResource(R.drawable.kyouto_blue)
                 binding.hyogo.setImageResource(R.drawable.hyougo_blue)
+                binding.osaka.setImageResource(R.drawable.oosaka_gray)
             }
             6 -> {
                 binding.nara.setImageResource(R.drawable.nara_blue)

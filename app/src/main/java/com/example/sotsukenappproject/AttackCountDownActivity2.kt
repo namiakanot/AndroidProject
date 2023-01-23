@@ -20,29 +20,18 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         binding = ActivityAttackCountDown2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-//        setContentView(binding.root)
 
         //45は発表用
         val times = intent.getLongExtra("ATTACK_TIME",0)
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
         val second: Long = times / 1000L % 60L
-        binding.standByTimer.text = "所要時間：%1d:%2$02d:%3$02d".format(hour, minute, second)
+        binding.standByTimer.text = "%1d:%2$02d:%3$02d".format(hour, minute, second)
 
         val timer = AttackTimer((times * 60 * 1000).toLong(), 100)
 
         binding.timerStart.setOnClickListener {
             timer.start()
-
-//            fun startVideo(){
-//                attackVideo.postDelayed({
-//                    videoView.setBackGroundresouce(R.color.bland_yellow)
-//                },VideoView.duration.toLong() - 100)
-//                videoView.start()
-//                Handler().postDelayed({
-//                    videoView.setBackgroundResource(R.color.bland_clear)
-//                })
-//            }
         }
         binding.timerStop.setOnClickListener {
             val dialog = checkpopFragment2()
