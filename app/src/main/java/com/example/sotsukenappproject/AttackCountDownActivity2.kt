@@ -1,8 +1,11 @@
 package com.example.sotsukenappproject
 
+import android.R
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.os.CountDownTimer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityAttackCountDown2Binding
@@ -21,13 +24,13 @@ class AttackCountDownActivity2 : AppCompatActivity() {
         setContentView(view)
 //        setContentView(binding.root)
 
-        val times = intent.getIntExtra("ATTACK_TIME",0)
+        val times = intent.getLongExtra("ATTACK_TIME",0)
         val hour: Long = times / 1000L / 60L / 60L
         val minute: Long = times / 1000L / 60L % 60L
         val second: Long = times / 1000L % 60L
         binding.standByTimer.text = "%1d:%2$02d:%3$02d".format(hour, minute, second)
 
-        val timer = AttackTimer((times * 60 * 1000).toLong(), 100)
+        val timer = AttackTimer((times).toLong(), 100)
 
         binding.timerStart.setOnClickListener {
             timer.start()
@@ -51,7 +54,7 @@ class AttackCountDownActivity2 : AppCompatActivity() {
             val hour = millisUntilFinished / 1000L / 60L / 60L
             val minute = millisUntilFinished / 1000L / 60L % 60L
             val second = millisUntilFinished / 1000L % 60L
-            binding.standByTimer.text = "%1d:%2$02d:%3$03d".format(hour,minute, second)
+            binding.standByTimer.text = "%1d:%2$02d:%3$3d".format(hour,minute, second)
         }
 
         override fun onFinish() {

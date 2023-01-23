@@ -120,10 +120,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/camp_background"
         app:layout_constraintEnd_toEndOf="@+id/camp_background"
-        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <TextView
         android:id="@+id/syotyouword2"
@@ -138,17 +138,17 @@
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/camp_background"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.851" />
 
-    <SeekBar
-        android:id="@+id/growbar"
-        android:layout_width="237dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toBottomOf="@+id/camp_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/camp_background"
-        app:layout_constraintVertical_bias="0.402" />
+<!--    <SeekBar-->
+<!--        android:id="@+id/growbar"-->
+<!--        android:layout_width="237dp"-->
+<!--        android:layout_height="23dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/camp_background"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/camp_background"-->
+<!--        app:layout_constraintVertical_bias="0.402" />-->
 
     <TextView
         android:id="@+id/timer"
