@@ -21,12 +21,13 @@ class SettingActivity : AppCompatActivity() {
     private var soundResId2 = 0
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+        //
+        val audioManager: AudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
         // 戻るを押すとメイン画面(戦闘画面)へ遷移
         binding.backBt.setOnClickListener {
@@ -45,11 +46,17 @@ class SettingActivity : AppCompatActivity() {
             soundPool.play(soundResId2,1.0f,100f,0,0,1.0f)
         }
 
-        // 初期値
-        binding.volume.setProgress(50)
+        // 現在の音量
+        val getVolume: Int = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
 
-        //　最大値
-        binding.volume.setMax(100)
+        // 最大値
+        val maxVolume: Int = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+
+        val volumeParcentage: Int = getVolume / maxVolume
+
+        binding.textvolume.text = volumeParcentage.toString()
+        binding.volume.progress = volumeParcentage
+
 
         // SeekBar調節
         binding.volume.setOnSeekBarChangeListener(
@@ -59,11 +66,13 @@ class SettingActivity : AppCompatActivity() {
                 ) {
                     val str: String = getString(R.string.percentage, progress)
                     binding.textvolume.text = str
-                    setVolumeControlStream(AudioManager.STREAM_MUSIC)
-
+                    //
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,maxVolume*progress/100,0)
                 }
 
                 override fun onStartTrackingTouch(volume_bar: SeekBar) {
+                    soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
+                    setVolumeControlStream(AudioManager.STREAM_MUSIC)
                 }
 
                 override fun onStopTrackingTouch(volume_bar: SeekBar) {
@@ -94,4 +103,4 @@ class SettingActivity : AppCompatActivity() {
         super.onPause()
         soundPool.release()
     }
-    }
+}
