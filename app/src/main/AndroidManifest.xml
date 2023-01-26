@@ -18,7 +18,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".testLastCheckActivity"
+            android:name=".TestLastCheckActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

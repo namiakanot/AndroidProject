@@ -21,6 +21,7 @@ class SettingActivity : AppCompatActivity() {
     private var soundResId2 = 0
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -58,11 +59,11 @@ class SettingActivity : AppCompatActivity() {
                 ) {
                     val str: String = getString(R.string.percentage, progress)
                     binding.textvolume.text = str
+                    setVolumeControlStream(AudioManager.STREAM_MUSIC)
+
                 }
 
                 override fun onStartTrackingTouch(volume_bar: SeekBar) {
-                    soundPool.play(soundResId, 1.0f, 100f, 0, 0, 1.0f)
-                    setVolumeControlStream(AudioManager.STREAM_MUSIC)
                 }
 
                 override fun onStopTrackingTouch(volume_bar: SeekBar) {
