@@ -4,12 +4,6 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.view.ViewCompat
 import com.example.sotsukenappproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -42,9 +36,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-        player = MediaPlayer.create(this, R.raw.sora)
-        player.isLooping = true
+        if(player == null) {
+            player = MediaPlayer.create(this, R.raw.sora)
+            player.isLooping = true
+            player.start()
+        }
     }
     override fun onResume(){
         super.onResume()

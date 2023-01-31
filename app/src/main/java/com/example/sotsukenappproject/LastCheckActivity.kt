@@ -17,6 +17,7 @@ class LastCheckActivity : AppCompatActivity() {
         setContentView(view)
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
+
         val userForce = pref.getInt("USER_FORCE",960)
         val prefForce: Array<Int> = arrayOf(1360,1460,1780,2610,5530,8830)
         val attackPref = pref.getInt("WON_COUNT",0)
@@ -48,6 +49,7 @@ class LastCheckActivity : AppCompatActivity() {
 
         // 進行時間
         val attackTime: Long = calcAttackTime(userForce, enemyForce).toLong()
+        val totalPlayTime: Long = pref.getLong("TOTAL_PLAY_TIME",0)
 
         // 自国と敵国の兵力と所要時間を表示する
         showEnemyStatus(attackPref, userForce, enemyForce, attackTime)
@@ -61,7 +63,9 @@ class LastCheckActivity : AppCompatActivity() {
         binding.startAttackButton.setOnClickListener{
             val intent = Intent(this, AttackCountDownActivity2::class.java)
             intent.putExtra("ATTACK_TIME",attackTime)
-            pref.edit().putLong("ATTACK_TIME",attackTime).apply()
+            pref.edit().putLong("ATTACK_TIME",attackTime)
+                .putLong("TOTAL_PLAY_TIME",totalPlayTime + attackTime)
+                .apply()
             startActivity(intent)
         }
     }

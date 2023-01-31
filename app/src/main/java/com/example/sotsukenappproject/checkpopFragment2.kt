@@ -15,7 +15,6 @@ class checkpopFragment2 : DialogFragment(){
         _binding = FragmentCheckpop2Binding.inflate(inflater, container, false)
         super.onCreate(savedInstanceState)
 
-
         binding.yesbutton.setOnClickListener{
             startActivity(Intent(context, GameActivity::class.java))
         }

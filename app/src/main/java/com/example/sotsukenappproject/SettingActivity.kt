@@ -52,10 +52,10 @@ class SettingActivity : AppCompatActivity() {
         // 最大値
         val maxVolume: Int = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
-        val volumeParcentage: Int = getVolume / maxVolume
+        val volumePercentage: Int = getVolume / maxVolume
 
-        binding.textvolume.text = volumeParcentage.toString()
-        binding.volume.progress = volumeParcentage
+        binding.textvolume.text = getString(R.string.percentage,volumePercentage)
+        binding.volume.progress = volumePercentage
 
 
         // SeekBar調節
