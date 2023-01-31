@@ -94,25 +94,25 @@ class ChoosePrefectureActivity : AppCompatActivity() {
         when (nextPref) {
             0 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
-                binding.naraBt.setTextColor(R.color.black)
+                binding.naraBt.setTextColor(R.color.purple)
             }
             1 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
                 binding.naraBt.setTextColor(R.color.light_blue_600)
-                binding.mieBt.setTextColor(R.color.black)
+                binding.mieBt.setTextColor(R.color.purple)
             }
             2 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
                 binding.naraBt.setTextColor(R.color.light_blue_600)
                 binding.mieBt.setTextColor(R.color.light_blue_600)
-                binding.sigaBt.setTextColor(R.color.black)
+                binding.sigaBt.setTextColor(R.color.purple)
             }
             3 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
                 binding.naraBt.setTextColor(R.color.light_blue_600)
                 binding.mieBt.setTextColor(R.color.light_blue_600)
                 binding.sigaBt.setTextColor(R.color.light_blue_600)
-                binding.kyotoBt.setTextColor(R.color.black)
+                binding.kyotoBt.setTextColor(R.color.purple)
             }
             4 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
@@ -120,7 +120,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
                 binding.mieBt.setTextColor(R.color.light_blue_600)
                 binding.sigaBt.setTextColor(R.color.light_blue_600)
                 binding.kyotoBt.setTextColor(R.color.light_blue_600)
-                binding.hyougoBt.setTextColor(R.color.black)
+                binding.hyougoBt.setTextColor(R.color.purple)
             }
             5 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
@@ -129,7 +129,7 @@ class ChoosePrefectureActivity : AppCompatActivity() {
                 binding.sigaBt.setTextColor(R.color.light_blue_600)
                 binding.kyotoBt.setTextColor(R.color.light_blue_600)
                 binding.hyougoBt.setTextColor(R.color.light_blue_600)
-                binding.osakaBt.setTextColor(R.color.black)
+                binding.osakaBt.setTextColor(R.color.purple)
             }
             6 -> {
                 binding.wakayamaBt.setTextColor(R.color.light_blue_600)
