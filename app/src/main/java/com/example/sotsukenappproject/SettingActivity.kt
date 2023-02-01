@@ -54,7 +54,6 @@ class SettingActivity : AppCompatActivity() {
 
         val volumePercentage: Int = getVolume / maxVolume
 
-        binding.textvolume.text = getString(R.string.percentage,volumePercentage)
         binding.volume.progress = volumePercentage
 
 

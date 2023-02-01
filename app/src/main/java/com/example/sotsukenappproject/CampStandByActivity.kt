@@ -1,12 +1,15 @@
 package com.example.sotsukenappproject
 
+import android.R
 import android.content.Intent
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
 import android.os.Bundle as Bundle1
+
 
 class CampStandByActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCampStandByBinding

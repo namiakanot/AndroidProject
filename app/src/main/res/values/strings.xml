@@ -29,4 +29,5 @@
     <string name="lostCount">進行失敗回数</string>
     <string name="losingCount">連続進行失敗数</string>
     <string name="LcampCount">大育成成功回数</string>
+    <string name="volumeIntroduce">下のバーで音量調整</string>
 </resources>

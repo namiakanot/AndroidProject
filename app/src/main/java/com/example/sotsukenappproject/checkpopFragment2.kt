@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.example.sotsukenappproject.databinding.FragmentCheckpop2Binding
 
 class checkpopFragment2 : DialogFragment(){
@@ -20,8 +21,7 @@ class checkpopFragment2 : DialogFragment(){
         }
 
         binding.nobutton.setOnClickListener{
-            _binding = null
-
+            onDestroy()
         }
         return binding.root
     }
