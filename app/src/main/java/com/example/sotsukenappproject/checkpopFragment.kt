@@ -24,8 +24,7 @@ class CheckPopFragment : DialogFragment(){
         }
 
         binding.nobutton.setOnClickListener{
-            _binding = null
-
+            onDestroy()
         }
         return binding.root
     }
