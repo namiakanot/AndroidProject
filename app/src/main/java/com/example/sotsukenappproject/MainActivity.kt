@@ -36,11 +36,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        if(player == null) {
+        //if(player == null) {
             player = MediaPlayer.create(this, R.raw.sora)
             player.isLooping = true
             player.start()
-        }
+        //}
     }
     override fun onResume(){
         super.onResume()
