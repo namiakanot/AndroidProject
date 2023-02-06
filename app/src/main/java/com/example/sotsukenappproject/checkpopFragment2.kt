@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.FragmentCheckpop2Binding
 
 class checkpopFragment2 : DialogFragment(){
@@ -18,6 +19,8 @@ class checkpopFragment2 : DialogFragment(){
 
         binding.yesbutton.setOnClickListener{
             startActivity(Intent(context, GameActivity::class.java))
+            val intent = Intent(context, LastCheckActivity::class.java)
+            intent.putExtra("LOSE_COUNT",1)
         }
 
         binding.nobutton.setOnClickListener{
