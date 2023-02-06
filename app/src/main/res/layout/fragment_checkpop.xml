@@ -16,6 +16,7 @@
             android:layout_width="352dp"
             android:layout_height="352dp"
             android:backgroundTint="@color/none"
+            android:scaleType="fitXY"
             android:src="@drawable/popsquare"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
