@@ -25,6 +25,11 @@ class GameActivity : AppCompatActivity() {
 
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val userForce = pref.getInt("USER_FORCE",960)
+        val totalCampTime = pref.getInt("total_CAMPTIME",0)
+        val totalAttackTime = pref.getInt("TOTAL_ATTACK_TIME",0)
+        val totalPlayTime = pref.getInt("TOTAL_PLAY_TIME",0)
+        pref.edit().putInt("TOTAL_PLAY_TIME",totalPlayTime + totalAttackTime + totalCampTime)
+            .apply()
         binding.military.text = userForce.toString()
 
         /* ↓フッターメニュー */
