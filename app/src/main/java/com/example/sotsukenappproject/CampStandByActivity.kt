@@ -1,24 +1,23 @@
 package com.example.sotsukenappproject
 
-import android.R
-import android.content.Intent
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.preference.PreferenceManager
 import com.example.sotsukenappproject.databinding.ActivityCampStandByBinding
-import android.os.Bundle as Bundle1
+import android.os.Bundle
 
 
 class CampStandByActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCampStandByBinding
+    val fragmentManager: FragmentManager = supportFragmentManager
+
 
     //カウントダウン処理>>
     inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :
         CountDownTimer(millisInFuture, countDownInterval) {
 
-        val fragmentManager: FragmentManager = supportFragmentManager
+        var campdialog = Camp_popFragment()
 
         override fun onTick(millisUntilFinished: Long) {
             val minute = millisUntilFinished / 1000L / 60L
@@ -28,15 +27,13 @@ class CampStandByActivity : AppCompatActivity() {
 
         override fun onFinish() {
             binding.standByTimer.text = "0:00"
+            //タイマー終了後のポップアップ
+            fragmentManager.run {
+                campdialog.show(this, "")
+            }
             
             val pref = PreferenceManager.getDefaultSharedPreferences(this@CampStandByActivity)
             val editor = pref.edit()
-            //タイマー終了後のポップアップ
-            val dialog = Camp_popFragment()
-            fragmentManager.run {
-                dialog.show(this, "")
-            }
-            
             val userForce = pref.getInt("USER_FORCE",960)
             val times = intent.getIntExtra("CampLevel", 0)
             val largeCampCount = pref.getInt("LCAMP_COUNT",0)
@@ -54,7 +51,7 @@ class CampStandByActivity : AppCompatActivity() {
         }
 
     }
-    override fun onCreate(savedInstanceState: Bundle1?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCampStandByBinding.inflate(layoutInflater)
         val view = binding.root
@@ -76,9 +73,9 @@ class CampStandByActivity : AppCompatActivity() {
 
         val strforce = forceUp.toString()
         
-        Bundle1().putInt("force_UP",forceUp)
+        Bundle().putInt("force_UP",forceUp)
         val Fragment = Camp_popFragment()
-        Fragment.arguments = Bundle1()
+        Fragment.arguments = Bundle()
 
         binding.textView32.setText(strforce) //テスト用
 
@@ -99,10 +96,10 @@ class CampStandByActivity : AppCompatActivity() {
         }
     }
 
-    override fun onUserLeaveHint() {
+    /*override fun onUserLeaveHint() {
         super.onUserLeaveHint()
         startActivity(Intent(this, GameActivity::class.java))
-    }
+    }*/
 
     //カウントダウン処理>>
 //    inner class CampTimer(millisInFuture: Long, countDownInterval: Long) :

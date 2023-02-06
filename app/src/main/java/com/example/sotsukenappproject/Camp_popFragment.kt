@@ -18,8 +18,7 @@ class Camp_popFragment : DialogFragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         _binding = FragmentCampPopBinding.inflate(inflater, container, false)
-        val forceUp = requireArguments().getInt("force_UP")
-        binding.textView30.text = forceUp.toString()
+
 
         binding.backbutton.setOnClickListener{
             val intent = Intent(context, GameActivity::class.java)
