@@ -14,7 +14,7 @@
             android:id="@+id/imageView5"
             android:layout_width="297dp"
             android:layout_height="301dp"
-            android:src="@drawable/pop"
+            android:src="@drawable/popsquare"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

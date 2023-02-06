@@ -17,7 +17,7 @@
             android:layout_width="354dp"
             android:layout_height="350dp"
             android:backgroundTint="@color/none"
-            android:src="@drawable/pop"
+            android:src="@drawable/popsquare"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
