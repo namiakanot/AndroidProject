@@ -42,10 +42,6 @@ class SettingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.playerName.setOnClickListener {
-            soundPool.play(soundResId2,1.0f,100f,0,0,1.0f)
-        }
-
         // 現在の音量
         val getVolume: Int = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
 

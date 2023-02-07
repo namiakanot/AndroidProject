@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkpopFragment">
+    tools:context=".CheckPopFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +16,6 @@
             android:layout_width="352dp"
             android:layout_height="352dp"
             android:backgroundTint="@color/none"
-            android:scaleType="fitXY"
             android:src="@drawable/popsquare"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
